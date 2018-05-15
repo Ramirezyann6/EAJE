@@ -1,0 +1,37 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15 mai 2018, 10:42:12
+    Author     : yann.ramirez
+*/
+header, nav, section, footer {
+    margin: 0 auto 0 auto;
+    width: 950px;
+    text-align: center;
+}
+nav {
+    margin-top: 10px;
+    width: 99%;
+    float: left;
+}
+
+nav li {
+    display:inline;
+    font-size: 150%;
+}
+
+nav li a {
+    padding: 10px;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    color: black;
+    background-color: white;
+}
