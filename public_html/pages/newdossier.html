@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="fr-FR">
+        <head>
+        <title>Accueil</title>
+        <meta charset="utf-8" />
+        <meta name="author" content="Ramirez Yann" />
+        <meta name="description" content="Découvrez le site de gestion des crèches de la ville de Sanary sur Mer" />
+        <link rel="stylesheet" href="../css/accueil.css" />
+        <link rel="stylesheet" href="../css/newDossier.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="../pages/newdossier.html">Création d'un dossier</a></li>
+                    <li><a href="../pages/listeTemp.html">Consultation de la liste</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="principal">
+                <section id="formulaireEnregistrementDemande">
+            <!-- mettre le srcipt php BD --> <form id="form_contact" name="form_contact" action="http://btssio.bonaparte.free.fr/testforms.php">
+                <fieldset id="coordo">
+                    <legend><font size="+3"><FONT color="white">Enregistrement de la demande</FONT></font> </legend>
+                    <p><label><FONT color="white">Numéro SGA : </FONT></label>
+                    <input type="text" name="i_numSGA" id="i_numSGA" size="35" pattern="[0-9\s\-]" /></p>
+                    <p><label><FONT color="white">Date de saisie de la fiche : </FONT></label>
+                    <input type="number" name="num_jour" id="num_jour" min="1" max="31" /><FONT color="white"> / </FONT><input type="number" name="num_mois" id="num_mois" min="1" max="12" /><FONT color="white"> / </FONT><input type="number" name="num_annee" id="num_annee" min="2000" /></p>
+                
+                    <fieldset id="AccuseRecep">
+                        <legend><FONT color="white">Accusé de reception</FONT></legend>
+                    <p><label><FONT color="white"> Date de l'accusé de reception : </FONT></label>
+                        <input type="number" name="num_jourReception" id="num_jourReception" min="1" max="31" /><FONT color="white"> / </FONT><input type="number" name="num_moisReception" id="num_moisReception" min="1" max="12" /><FONT color="white"> / </FONT><input type="number" name="num_anneeReception" id="num_anneeReception" min="2000" /></p>
+                    <p><label><FONT color="white">Type de réponse : </FONT></label>
+                      
+                       <input type="checkbox" name="chk_mail" id="chk_mail" value="mail"><label for="chk_mail"><FONT color="white">Mail</FONT></label>
+                       <input type="checkbox" name="chk_courrier" id="chk_courrier" value="courrier"><label for="chk_courrier"><FONT color="white">Courrier</FONT></label>
+                    </p>
+                    </fieldset>
+                </fieldset>
+                
+                <fieldset id="Parent1">
+                    <legend><font size="+3"><FONT color="white">Parent 1</FONT></font></legend>
+                   
+                   <p><label><FONT color="white">Numéro allocataire CAF : </FONT></label>
+                    <input type="text" name="i_numAlloCAF" id="i_numAlloCAF" size="35" pattern="[0-9]" /></p>
+                   
+                   <p><label><FONT color="white">Civilité : </FONT></label>
+                    <input type="text" name="i_civilite" id="i_civilite" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
+                   
+                   <p><label><FONT color="white">Nom : </FONT></label>
+                    <input type="text" name="i_nom" id="i_nom" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
+                   
+                   <p><label><FONT color="white">Prénom : </FONT></label>
+                    <input type="text" name="i_prenom" id="i_prenom" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
+                   
+                   <p><label><FONT color="white">Activité professionnelle : </FONT></label>
+                    <input type="text" name="i_actProf" id="i_actProf" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
+                   
+                   <p><label><FONT color="white">Lieu activité : </FONT></label>
+                    <input type="text" name="i_lieuActivite" id="i_lieuActivite" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
+                   
+                   <p><label><FONT color="white">Code postal du lieu d'activité: </FONT></label>
+                    <input type="text" name="i_CP" id="i_CPact" size="35" pattern="[0-9]" /></p>
+                   
+                   <p><label><FONT color="white">Bénéficiaire minima social : </FONT></label>
+                       <input type="checkbox" name="chk_oui" id="chk_oui" value="oui"><label for="chk_oui"><FONT color="white">Oui</FONT></label>
+                       <input type="checkbox" name="chk_non" id="chk_non" value="non"><label for="chk_non"><FONT color="white">Non</FONT></label>
+                    </p>
+                </fieldset>
+                
+                <fieldset id="Parent2">
+                    <legend><font size="+3"><FONT color="white">Parent 2</FONT></font></legend>
+                   
+                   <p><label><FONT color="white">Numéro allocataire CAF : </FONT></label>
+                    <input type="text" name="i_numAlloCAF2" id="i_numAlloCAF2" size="35" pattern="[0-9]" /></p>
+                   
+                   <p><label><FONT color="white">Civilité : </FONT></label>
+                    <input type="text" name="i_civilite2" id="i_civilite2" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
+                   
+                   <p><label><FONT color="white">Nom : </FONT></label>
+                    <input type="text" name="i_nom2" id="i_nom2" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
+                   
+                   <p><label><FONT color="white">Prénom : </FONT></label>
+                    <input type="text" name="i_prenom2" id="i_prenom2" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
+                   
+                   <p><label><FONT color="white">Activité professionnelle : </FONT></label>
+                    <input type="text" name="i_actProf2" id="i_actProf2" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
+                   
+                   <p><label><FONT color="white">Lieu activité : </FONT></label>
+                    <input type="text" name="i_lieuActivite2" id="i_lieuActivite2" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
+                   
+                   <p><label><FONT color="white">Code postal du lieu d'activité: </FONT></label>
+                    <input type="text" name="i_CP2" id="i_CPact2" size="35" pattern="[0-9]" /></p>
+                   
+                   <p><label><FONT color="white">Bénéficiaire minima social : </FONT></label>
+                       <input type="checkbox" name="chk_oui2" id="chk_oui2" value="oui2"><label for="chk_oui2"><FONT color="white">Oui</FONT></label>
+                       <input type="checkbox" name="chk_non2" id="chk_non2" value="non2"><label for="chk_non2"><FONT color="white">Non</FONT></label>
+                    </p>
+                </fieldset>
+                <fieldset id="RenseignementSup">
+                    <legend><font size="+3"><FONT color="white">Renseignements supplémentaires</FONT></font></legend>
+                    <p><label><FONT color="white">Adresse de la famille : </FONT></label>
+                    <input type="text" name="i_adresse" id="i_adresse" size="35" pattern="[a-zA-Z\0-9\s\-]+$" /></p>
+                     <p><label><FONT color="white">Code postal de la famille : </FONT></label>
+                    <input type="text" name="i_CPfamille" id="i_CPfamille" size="35" pattern="([A-Z]+[A-Z]?\-)?[0-9]{1,2} ?[0-9]{3}" /></p>
+                    <p><label><FONT color="white">Numéro de téléphone fixe: </FONT></label>
+                    <input type="text" name="i_numTel" id="i_numTel" size="35" pattern="(01|02|03|04|05|06|07|08|09)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}" /></p>
+                    <p><label><FONT color="white">Numéro de téléphone portable : </FONT></label>
+                    <input type="text" name="i_numPort" id="i_numPort" size="35" pattern="(01|02|03|04|05|06|07|08|09)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}" /></p>
+                     <p><label><FONT color="white">Adresse mail : </FONT></label>
+                    <input type="text" name="i_email" id="i_email" size="35" pattern="[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})" /></p>
+                    <p id="controles"><input type="submit" name="sub_validation" value="Validation" /> <input type="reset" name="rst_annuler" value="Annuler" /></p>
+                </fieldset>
+                </section>
+        </section>
+    </body>
+</html>

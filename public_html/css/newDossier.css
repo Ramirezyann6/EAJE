@@ -1,0 +1,48 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15 mai 2018, 14:12:57
+    Author     : yann.ramirez
+*/
+
+body {
+color:black;
+background-image:url(images/test2.jpeg);
+margin:0;
+}
+
+#principal {
+    padding-top: 10px;
+    text-align: center;
+}
+
+#formulaire {
+    text-align: left;
+}
+
+#formulaire form {
+    clear: both;
+    margin: 0 30% auto 30%;
+}
+
+#formulaire form fieldset {
+    float: right;
+}
+#coordo legend {
+    text-align: center;
+    
+}
+
+#coordo {
+    text-align: center;
+    margin-right: 30px;
+}
+p {
+    margin: 1em 0px;
+}
+.input-validation {
+	display: inline;
+}
