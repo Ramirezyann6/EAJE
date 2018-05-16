@@ -29,7 +29,7 @@ margin:0;
 }
 
 #formulaire form fieldset {
-    float: right;
+    float: left;
 }
 #coordo legend {
     text-align: center;
@@ -37,12 +37,46 @@ margin:0;
 }
 
 #coordo {
-    text-align: center;
+    text-align: left;
     margin-right: 30px;
 }
 p {
+    text-align: left;
     margin: 1em 0px;
 }
+#chk_mail{
+    float: left;
+}
+#chk_courrier{
+    float: left;
+}
+#rd_oui4,#rd_non4{
+    float: left;
+    display: inline;
+    margin-bottom: 0;
+    padding-right: 0.5em;
+}
+
 .input-validation {
 	display: inline;
+}
+
+
+
+label{
+    display: block;
+	width: 150px;
+	float: left;
+}
+
+table {
+    width: 100%;
+    border: 0;
+}
+
+
+/* Smartphone et Tablette*/
+@media screen and (max-width:992px) {
+    #formulaire {width: 100%;}
+    #formulaire form fieldset, #controles {clear: left;}
 }

@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html lang="fr-FR">
         <head>
-        <title>Accueil</title>
+        <title>Création d'un dossier</title>
         <meta charset="utf-8" />
         <meta name="author" content="Ramirez Yann" />
         <meta name="description" content="Découvrez le site de gestion des crèches de la ville de Sanary sur Mer" />
@@ -43,7 +43,9 @@ and open the template in the editor.
                     </p>
                     </fieldset>
                 </fieldset>
-                
+                <table> 
+                    <tr> 
+                    <td> 
                 <fieldset id="Parent1">
                     <legend><font size="+3"><FONT color="white">Parent 1</FONT></font></legend>
                    
@@ -59,6 +61,11 @@ and open the template in the editor.
                    <p><label><FONT color="white">Prénom : </FONT></label>
                     <input type="text" name="i_prenom" id="i_prenom" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
                    
+                   <p><label><FONT color="white">En poste/Activité : </FONT></label>
+                       <input type="radio" name="rd_posteAct" value="oui4" id="rd_oui4" /> <label for="rd_oui4"><FONT color="white">Oui</FONT></label>
+                       <input type="radio" name="rd_posteAct" value="non4" id="rd_non4" /> <label for="rd_non4"><FONT color="white">Non</FONT></label></p>
+                   
+                   
                    <p><label><FONT color="white">Activité professionnelle : </FONT></label>
                     <input type="text" name="i_actProf" id="i_actProf" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
                    
@@ -68,17 +75,21 @@ and open the template in the editor.
                    <p><label><FONT color="white">Code postal du lieu d'activité: </FONT></label>
                     <input type="text" name="i_CP" id="i_CPact" size="35" pattern="[0-9]" /></p>
                    
-                   <p><label><FONT color="white">Bénéficiaire minima social : </FONT></label>
-                       <input type="checkbox" name="chk_oui" id="chk_oui" value="oui"><label for="chk_oui"><FONT color="white">Oui</FONT></label>
-                       <input type="checkbox" name="chk_non" id="chk_non" value="non"><label for="chk_non"><FONT color="white">Non</FONT></label>
-                    </p>
+                   <label><FONT color="white">Bénéficiaire minima social : </FONT></label>
+                       <div>
+                       <input type="radio" name="rd_bms" value="oui" id="rd_oui" /> <label for="rd_oui"><FONT color="white">Oui</FONT></label>
+                       <input type="radio" name="rd_bms" value="non" id="rd_non" /> <label for="rd_non"><FONT color="white">Non</FONT></label>
+                       
+                   </div>
+                   
+                    
                 </fieldset>
-                
+                </td>
+                <td>
                 <fieldset id="Parent2">
                     <legend><font size="+3"><FONT color="white">Parent 2</FONT></font></legend>
                    
-                   <p><label><FONT color="white">Numéro allocataire CAF : </FONT></label>
-                    <input type="text" name="i_numAlloCAF2" id="i_numAlloCAF2" size="35" pattern="[0-9]" /></p>
+                  
                    
                    <p><label><FONT color="white">Civilité : </FONT></label>
                     <input type="text" name="i_civilite2" id="i_civilite2" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
@@ -92,17 +103,29 @@ and open the template in the editor.
                    <p><label><FONT color="white">Activité professionnelle : </FONT></label>
                     <input type="text" name="i_actProf2" id="i_actProf2" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
                    
+                   <label><FONT color="white">En poste/activité : </FONT></label>
+                   <div>
+                       <input type="radio" name="rd_posteAct" value="oui3" id="rd_oui3" /> <label for="rd_oui3"><FONT color="white">Oui</FONT></label>
+                       <input type="radio" name="rd_posteAct" value="non3" id="rd_non3" /> <label for="rd_non3"><FONT color="white">Non</FONT></label>
+                       
+                   </div>
+                   
                    <p><label><FONT color="white">Lieu activité : </FONT></label>
                     <input type="text" name="i_lieuActivite2" id="i_lieuActivite2" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
                    
                    <p><label><FONT color="white">Code postal du lieu d'activité: </FONT></label>
                     <input type="text" name="i_CP2" id="i_CPact2" size="35" pattern="[0-9]" /></p>
                    
-                   <p><label><FONT color="white">Bénéficiaire minima social : </FONT></label>
-                       <input type="checkbox" name="chk_oui2" id="chk_oui2" value="oui2"><label for="chk_oui2"><FONT color="white">Oui</FONT></label>
-                       <input type="checkbox" name="chk_non2" id="chk_non2" value="non2"><label for="chk_non2"><FONT color="white">Non</FONT></label>
-                    </p>
+                   <label><FONT color="white">Bénéficiaire minima social : </FONT></label>
+                   <div>
+                       <input type="radio" name="rd_bms" value="oui2" id="rd_oui2" /> <label for="rd_oui2"><FONT color="white">Oui</FONT></label>
+                       <input type="radio" name="rd_bms" value="non2" id="rd_non2" /> <label for="rd_non2"><FONT color="white">Non</FONT></label>
+                       
+                   </div>
                 </fieldset>
+                </td>
+                    </tr> 
+                </table>
                 <fieldset id="RenseignementSup">
                     <legend><font size="+3"><FONT color="white">Renseignements supplémentaires</FONT></font></legend>
                     <p><label><FONT color="white">Adresse de la famille : </FONT></label>
