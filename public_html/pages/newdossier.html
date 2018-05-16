@@ -32,27 +32,25 @@ and open the template in the editor.
                     <p><label><FONT color="white">Date de saisie de la fiche : </FONT></label>
                     <input type="number" name="num_jour" id="num_jour" min="1" max="31" /><FONT color="white"> / </FONT><input type="number" name="num_mois" id="num_mois" min="1" max="12" /><FONT color="white"> / </FONT><input type="number" name="num_annee" id="num_annee" min="2000" /></p>
                 
-                    <fieldset id="AccuseRecep">
+                    <fieldset id="coordo2">
                         <legend><FONT color="white">Accusé de reception</FONT></legend>
                     <p><label><FONT color="white"> Date de l'accusé de reception : </FONT></label>
                         <input type="number" name="num_jourReception" id="num_jourReception" min="1" max="31" /><FONT color="white"> / </FONT><input type="number" name="num_moisReception" id="num_moisReception" min="1" max="12" /><FONT color="white"> / </FONT><input type="number" name="num_anneeReception" id="num_anneeReception" min="2000" /></p>
-                    <p><label><FONT color="white">Type de réponse : </FONT></label>
+                    <br /><p><label><FONT color="white">Type de réponse : </FONT></label>
                       
                        <input type="checkbox" name="chk_mail" id="chk_mail" value="mail"><label for="chk_mail"><FONT color="white">Mail</FONT></label>
                        <input type="checkbox" name="chk_courrier" id="chk_courrier" value="courrier"><label for="chk_courrier"><FONT color="white">Courrier</FONT></label>
                     </p>
                     </fieldset>
                 </fieldset>
-                <table> 
-                    <tr> 
-                    <td> 
-                <fieldset id="Parent1">
+                
+                <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Parent 1</FONT></font></legend>
                    
                    <p><label><FONT color="white">Numéro allocataire CAF : </FONT></label>
                     <input type="text" name="i_numAlloCAF" id="i_numAlloCAF" size="35" pattern="[0-9]" /></p>
                    
-                   <p><label><FONT color="white">Civilité : </FONT></label>
+                   <br /><p><label><FONT color="white">Civilité : </FONT></label>
                     <input type="text" name="i_civilite" id="i_civilite" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
                    
                    <p><label><FONT color="white">Nom : </FONT></label>
@@ -61,32 +59,30 @@ and open the template in the editor.
                    <p><label><FONT color="white">Prénom : </FONT></label>
                     <input type="text" name="i_prenom" id="i_prenom" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
                    
-                   <p><label><FONT color="white">En poste/Activité : </FONT></label>
-                       <input type="radio" name="rd_posteAct" value="oui4" id="rd_oui4" /> <label for="rd_oui4"><FONT color="white">Oui</FONT></label>
-                       <input type="radio" name="rd_posteAct" value="non4" id="rd_non4" /> <label for="rd_non4"><FONT color="white">Non</FONT></label></p>
+                   <p><label><FONT color="white">En poste/Activité : </FONT></label></p>
+                   <p><input type="radio" name="rd_posteAct" value="oui4" id="rd_oui4" /> <label for="rd_oui4"><FONT color="white">Oui</FONT></label></p>
+                   <p><input type="radio" name="rd_posteAct" value="non4" id="rd_non4" /> <label for="rd_non4"><FONT color="white">Non</FONT></label></p>
                    
                    
-                   <p><label><FONT color="white">Activité professionnelle : </FONT></label>
-                    <input type="text" name="i_actProf" id="i_actProf" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
+                   <br /><br /><p><label><FONT color="white">Activité professionnelle : </FONT></label></p>
+                   <p><input type="text" name="i_actProf" id="i_actProf" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
                    
-                   <p><label><FONT color="white">Lieu activité : </FONT></label>
+                   <br /><p><label><FONT color="white">Lieu activité : </FONT></label>
                     <input type="text" name="i_lieuActivite" id="i_lieuActivite" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
                    
                    <p><label><FONT color="white">Code postal du lieu d'activité: </FONT></label>
-                    <input type="text" name="i_CP" id="i_CPact" size="35" pattern="[0-9]" /></p>
+                    <input type="text" name="i_CP" id="i_CPact" size="35" pattern="[0-9]" /></p><br />
                    
-                   <label><FONT color="white">Bénéficiaire minima social : </FONT></label>
-                       <div>
-                       <input type="radio" name="rd_bms" value="oui" id="rd_oui" /> <label for="rd_oui"><FONT color="white">Oui</FONT></label>
-                       <input type="radio" name="rd_bms" value="non" id="rd_non" /> <label for="rd_non"><FONT color="white">Non</FONT></label>
-                       
-                   </div>
+                   <p><label><FONT color="white">Bénéficiaire minima social : </FONT></label></p>
+                      
+                   <p><input type="radio" name="rd_bms" value="oui" id="rd_oui" /> <label for="rd_oui"><FONT color="white">Oui</FONT></label></p>
+                   <p><input type="radio" name="rd_bms" value="non" id="rd_non" /> <label for="rd_non"><FONT color="white">Non</FONT></label></p>
+                  
                    
                     
                 </fieldset>
-                </td>
-                <td>
-                <fieldset id="Parent2">
+                
+                <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Parent 2</FONT></font></legend>
                    
                   
@@ -100,33 +96,33 @@ and open the template in the editor.
                    <p><label><FONT color="white">Prénom : </FONT></label>
                     <input type="text" name="i_prenom2" id="i_prenom2" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
                    
-                   <p><label><FONT color="white">Activité professionnelle : </FONT></label>
+                   <p><label><FONT color="white">En poste/activité : </FONT></label></p>
+                   
+                   <p><input type="radio" name="rd_posteAct" value="oui3" id="rd_oui3" /> <label for="rd_oui3"><FONT color="white">Oui</FONT></label></p>
+                   <p><input type="radio" name="rd_posteAct" value="non3" id="rd_non3" /> <label for="rd_non3"><FONT color="white">Non</FONT></label></p>
+                   
+                   <br /><br /><p><label><FONT color="white">Activité professionnelle : </FONT></label>
                     <input type="text" name="i_actProf2" id="i_actProf2" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
                    
-                   <label><FONT color="white">En poste/activité : </FONT></label>
-                   <div>
-                       <input type="radio" name="rd_posteAct" value="oui3" id="rd_oui3" /> <label for="rd_oui3"><FONT color="white">Oui</FONT></label>
-                       <input type="radio" name="rd_posteAct" value="non3" id="rd_non3" /> <label for="rd_non3"><FONT color="white">Non</FONT></label>
-                       
-                   </div>
                    
-                   <p><label><FONT color="white">Lieu activité : </FONT></label>
+                       
+                   
+                   
+                   <br /><p><label><FONT color="white">Lieu activité : </FONT></label>
                     <input type="text" name="i_lieuActivite2" id="i_lieuActivite2" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
                    
                    <p><label><FONT color="white">Code postal du lieu d'activité: </FONT></label>
-                    <input type="text" name="i_CP2" id="i_CPact2" size="35" pattern="[0-9]" /></p>
+                    <input type="text" name="i_CP2" id="i_CPact2" size="35" pattern="[0-9]" /></p><br /><br />
                    
                    <label><FONT color="white">Bénéficiaire minima social : </FONT></label>
-                   <div>
-                       <input type="radio" name="rd_bms" value="oui2" id="rd_oui2" /> <label for="rd_oui2"><FONT color="white">Oui</FONT></label>
-                       <input type="radio" name="rd_bms" value="non2" id="rd_non2" /> <label for="rd_non2"><FONT color="white">Non</FONT></label>
-                       
-                   </div>
+                   
+                           
+                   <p><input type="radio" name="rd_bms" value="oui2" id="rd_oui2" /> <label for="rd_oui2"><FONT color="white">Oui</FONT></label></p>
+                   <p><input type="radio" name="rd_bms" value="non2" id="rd_non2" /> <label for="rd_non2"><FONT color="white">Non</FONT></label></p>
+                   
                 </fieldset>
-                </td>
-                    </tr> 
-                </table>
-                <fieldset id="RenseignementSup">
+                 
+                    <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Renseignements supplémentaires</FONT></font></legend>
                     <p><label><FONT color="white">Adresse de la famille : </FONT></label>
                     <input type="text" name="i_adresse" id="i_adresse" size="35" pattern="[a-zA-Z\0-9\s\-]+$" /></p>
@@ -140,7 +136,9 @@ and open the template in the editor.
                     <input type="text" name="i_email" id="i_email" size="35" pattern="[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})" /></p>
                     <p id="controles"><input type="submit" name="sub_validation" value="Validation" /> <input type="reset" name="rst_annuler" value="Annuler" /></p>
                 </fieldset>
+            </form>
                 </section>
+
         </section>
     </body>
 </html>

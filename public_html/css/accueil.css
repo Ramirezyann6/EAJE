@@ -35,3 +35,9 @@ nav li a:hover {
     color: black;
     background-color: white;
 }
+
+body {
+color:black;
+background-image:url(images/test2.jpeg);
+margin:0;
+}

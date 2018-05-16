@@ -7,39 +7,43 @@ and open the template in the editor.
     Created on : 15 mai 2018, 14:12:57
     Author     : yann.ramirez
 */
-
+h1 {
+    margin: 0 auto 0 auto;
+    color: black;
+    clear: both;
+}
 body {
 color:black;
 background-image:url(images/test2.jpeg);
-margin:0;
 }
-
-#principal {
-    padding-top: 10px;
-    text-align: center;
-}
-
 #formulaire {
     text-align: left;
 }
 
 #formulaire form {
     clear: both;
-    margin: 0 30% auto 30%;
+    margin: 0 35% auto 35%;
 }
 
 #formulaire form fieldset {
     float: left;
-}
-#coordo legend {
-    text-align: center;
-    
+    width: 100%;
 }
 
 #coordo {
     text-align: left;
-    margin-right: 30px;
+    margin-right: 20px;
+    width: 60%;
 }
+#coordo2 {
+    text-align: left;
+    margin-right: 20px;
+}
+#coordo legend {
+    text-align: left;
+}
+
+
 p {
     text-align: left;
     margin: 1em 0px;
@@ -50,13 +54,30 @@ p {
 #chk_courrier{
     float: left;
 }
-#rd_oui4,#rd_non4{
+#rd_oui{
     float: left;
-    display: inline;
-    margin-bottom: 0;
-    padding-right: 0.5em;
 }
-
+#rd_non{
+    float: left;
+}
+#rd_oui2{
+    float: left;
+}
+#rd_non2{
+    float: left;
+}
+#rd_oui3{
+    float: left;
+}
+#rd_non3{
+    float: left;
+}
+#rd_oui4{
+    float: left;
+}
+#rd_non4{
+    float: left;
+}
 .input-validation {
 	display: inline;
 }
@@ -64,9 +85,10 @@ p {
 
 
 label{
-    display: block;
-	width: 150px;
+    margin-right: 20px;
+	width: 130px;
 	float: left;
+        
 }
 
 table {
