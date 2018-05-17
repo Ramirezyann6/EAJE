@@ -6,25 +6,33 @@ and open the template in the editor.
 -->
 <html lang="fr-FR">
     <head>
-        <title>Accueil</title>
+        <title>Liste active</title>
         <meta charset="utf-8" />
         <meta name="author" content="Ramirez Yann" />
-        <meta name="description" content="Découvrez le site de gestion des crèches de la ville de Sanary sur Mer" />
-        
+        <meta name="description" content="Ici, la liste des demandes" />
+        <link rel="stylesheet" href="../css/accueil.css" />
         <link rel="stylesheet" href="../css/styles.css" />
-        
+        <link rel="stylesheet" href="../css/ListeTemp.css" />
     </head>
     <body>
         <header>
             <nav>
                 <ul>
                     <li><a href="../pages/newdossier.html">Création d'un dossier</a></li>
-                    <li><a href="../pages/newEnfant.html">Ajouter un enfant</a></li>
+                     <li><a href="../pages/newEnfant.html">Ajouter un enfant</a></li>
                     <li><a href="../pages/newCommentaire.html">Ajouter un commentaire</a></li>
                     <li><a href="../pages/priseChargeEnfant.html">Prise en charge d'un enfant</a></li>
                     <li><a href="../pages/listeTemp.html">Consultation de la liste</a></li>
                 </ul>
             </nav>
         </header>
+         <section id="principal">
+                <section id="formulaireEnregistrementDemande">
+            <!-- mettre le srcipt php BD --> <form id="form_contact" name="form_contact" action="http://btssio.bonaparte.free.fr/testforms.php">
+                <fieldset id="coordo">
+                    <legend><font size="+3"><FONT color="white">Enregistrement de la demande</FONT></font> </legend>
+                </fieldset>
+                </section>
+         </section>
     </body>
 </html>

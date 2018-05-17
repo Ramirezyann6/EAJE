@@ -8,10 +8,39 @@ and open the template in the editor.
     Author     : yann.ramirez
 */
 
+header, nav, section, footer {
+    margin: 0 auto 0 auto;
+    width: 950px;
+    text-align: center;
+}
 
 header {
- background: url('images/banniere_ecole.jpg') no-repeat scroll center 5px;
- height: 260px;
+ background: url('images/banniere_ecole.jpg') no-repeat scroll center 0px;
+ height: 200px;
+}
+
+nav {
+    margin-top: 200px;
+    width: 99%;
+    float: left;
+}
+
+nav li {
+    display:inline;
+    font-size: 150%;
+}
+
+nav li a {
+    padding: 10px;
+    color: white;
+    background-color: black;
+    font : bold 13px bold, arial, serif;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    color: black;
+    background-color: white;
 }
 
 body {
@@ -43,9 +72,35 @@ margin:0;
 }
 
 #coordo {
-    text-align: right;
+    text-align: left;
     margin-right: 50px;
+}
+
+label{
+    margin-right: 20px;
+	width: 130px;
+	float: left;
+        
+}
+area_commentraire {
+    text-align: left;
+    margin: 1em 0px;
+}
+
+p {
+    text-align: left;
+    margin: 1em 0px;
+}
+
+#controles {
+    float: right;
 }
 .input-validation {
 	display: inline;
 }
+@media screen and (min-width:481px) and (max-width:992px) {
+    header { background-image: none; width: auto; margin: 0; height: 160px;}
+    nav { margin-top: 0; }
+    nav ul { margin-left: 0; margin-top: 0; padding-left: 0;}
+    nav li a { display: block; margin-top: 1px; height: 25px; padding: 1px;}
+    #principal { height: auto; width: auto;}}

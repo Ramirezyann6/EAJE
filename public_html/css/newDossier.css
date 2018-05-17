@@ -22,7 +22,7 @@ background-image:url(images/test2.jpeg);
 
 #formulaire form {
     clear: both;
-    margin: 0 35% auto 35%;
+    margin: auto;
 }
 
 #formulaire form fieldset {

@@ -4,43 +4,33 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 15 mai 2018, 10:42:12
+    Created on : 17 mai 2018, 10:43:19
     Author     : yann.ramirez
 */
-header, nav, section, footer {
-    margin: 0 auto 0 auto;
-    width: 950px;
-    text-align: center;
-}
-
-nav {
-    margin-top: 240px;
-    width: 99%;
+#formulaire form fieldset {
     float: left;
+    width: 100%;
+}
+#coordo legend {
+    text-align: left;
 }
 
-nav li {
-    display:inline;
-    font-size: 150%;
+
+p {
+    text-align: left;
+    margin: 1em 0px;}
+
+#coordo {
+    text-align: left;
+    margin-right: 100px;
+    width: 80%;
 }
 
-nav li a {
-    padding: 10px;
-    color: white;
-    background-color: black;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-nav li a:hover {
-    color: black;
-    background-color: white;
-}
-
-body {
-color:black;
-background-image:url(images/test2.jpeg);
-margin:0;
+label{
+    margin-right: 20px;
+	width: 130px;
+	float: left;
+        
 }
 @media screen and (min-width:481px) and (max-width:992px) {
     header { background-image: none; width: auto; margin: 0; height: 160px;}
