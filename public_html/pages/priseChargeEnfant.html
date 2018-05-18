@@ -26,5 +26,28 @@ and open the template in the editor.
                 </ul>
             </nav>
         </header>
+        <section id="principal">
+                <section id="formulaireEnregistrementPriseChargeEnfant">
+            <!-- mettre le srcipt php BD --> <form id="form_contact" name="form_contact" action="http://btssio.bonaparte.free.fr/testforms.php">
+                <fieldset id="coordo">
+                    <legend><font size="+3"><FONT color="white">Commentaire</FONT></font> </legend>                    
+                    <p><label><FONT color="white">Date de prise en charge de l'enfant : </FONT></label>
+                    <input type="number" name="num_jourcom" id="num_jourcom" min="1" max="31" /><FONT color="white"> / </FONT><input type="number" name="num_moiscom" id="num_moiscom" min="1" max="12" /><FONT color="white"> / </FONT><input type="number" name="num_anneecom" id="num_anneecom" min="2000" /></p>
+                    <br /><p>
+                        <label for="lst_nomCreche"><FONT color="white">Structure retenue : </FONT></label>
+                        <select name="lst_nomCreche" id="lst_nomCreche">
+                            <option value="1">Les Bambinoux</option>
+                            <option value="2">Les Canailloux</option>
+                            <option value="3">Le Petit Prince du Verger</option>
+                            <option value="4">Un Petit Coin de Paradis</option>
+                            <option value="5">La Petite Etoile</option>
+                            <option value="6">Micro-crèche privée</option>
+                            <option value="7">Babynounous</option>
+                        </select>
+                    </p>
+                    <p id="controles"><input type="submit" name="sub_validationPriseChargeEnfant" value="Validation" /> <input type="reset" name="rst_annulerPriseChargeEnfant" value="Annuler" /></p>
+                </fieldset>
+                </section>
+         </section>
     </body>
 </html>
