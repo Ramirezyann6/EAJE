@@ -89,9 +89,15 @@ area_commentraire {
 
 p {
     text-align: left;
-    margin: 1em 0px;
+    margin: 1em 10px;
+}
+#rd_modeGarde1{
+    float: left;
 }
 
+#rd_modeGarde2{
+    float: left;
+}
 #controles {
     float: right;
 }
