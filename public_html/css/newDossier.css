@@ -33,7 +33,7 @@ background-image:url(images/test2.jpeg);
 #coordo {
     text-align: left;
     margin-right: 20px;
-    width: 60%;
+    width: 100%;
 }
 #coordo2 {
     text-align: left;
@@ -79,9 +79,6 @@ p {
     float: left;
 }
 
-.input-validation {
-	display: inline;
-}
 
 
 

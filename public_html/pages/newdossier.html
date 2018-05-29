@@ -4,7 +4,8 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html lang="fr-FR">
+
+    <?php include('../php/ccasphp.php');?>
         <head>
         <title>Création d'un dossier</title>
         <meta charset="utf-8" />
@@ -18,21 +19,22 @@ and open the template in the editor.
         <header>
             <nav>
                 <ul>
-                    <li><a href="../pages/newdossier.html">Création d'un dossier</a></li>
+                    <li><a href="../php/newdossierphp.php">Création d'un dossier</a></li>
                     <li><a href="../pages/newEnfant.html">Ajouter un enfant</a></li>
                     <li><a href="../pages/newCommentaire.html">Ajouter un commentaire</a></li>
                     <li><a href="../pages/priseChargeEnfant.html">Prise en charge d'un enfant</a></li>
                     <li><a href="../pages/listeTemp.html">Consultation de la liste</a></li>
+                    
                 </ul>
             </nav>
         </header>
         <section id="principal">
                 <section id="formulaireEnregistrementDemande">
-            <!-- mettre le srcipt php BD --> <form id="form_contact" name="form_contact" action="http://btssio.bonaparte.free.fr/testforms.php">
+            <form method="POST" action="../php/ccasphp.php">
                 <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Enregistrement de la demande</FONT></font> </legend>
-                    <p><label><FONT color="white">Numéro SGA : </FONT></label>
-                    <input type="text" name="i_numSGA" id="i_numSGA" size="35" pattern="[0-9\s\-]" /></p>
+                    <p><label><FONT color="white">Numéro SGA : </FONT></label></p>
+                    <p><input type="text" name="i_numSGA" id="i_numSGA" size="35" pattern="[0-9\s\-]" /></p>
                     <p><label><FONT color="white">Date de saisie de la fiche : </FONT></label>
                     <input type="number" name="num_jour" id="num_jour" min="1" max="31" /><FONT color="white"> / </FONT><input type="number" name="num_mois" id="num_mois" min="1" max="12" /><FONT color="white"> / </FONT><input type="number" name="num_annee" id="num_annee" min="2000" /></p>
                 
@@ -144,5 +146,30 @@ and open the template in the editor.
                 </section>
 
         </section>
+        
+                <?php
+        if (isset ($_POST['validation'])){
+            //On récupère les valeurs entrées par l'utilisateur :
+            $pseudo=$_POST['pseudo'];
+            $age=$_POST['age'];
+            $sexe=$_POST['sexe'];
+            //On construit la date d'aujourd'hui
+            //strictement comme sql la construit
+            $today = date("y-m-d");
+            //On se connecte
+            connectMaBase();
+ 
+            //On prépare la commande sql d'insertion
+            $sql = 'INSERT INTO Utilisateurs VALUES("","'.$pseudo.'","'.$sexe.'","'.$age.'","'.$today.'")'; 
+ 
+            /*on lance la commande (mysql_query) et au cas où, 
+            on rédige un petit message d'erreur si la requête ne passe pas (or die) 
+            (Message qui intègrera les causes d'erreur sql)*/
+            mysql_query ($sql) or die ('Erreur SQL !'.$sql.'<br />'.mysql_error()); 
+ 
+            // on ferme la connexion
+            mysql_close();
+        }
+        ?>
     </body>
-</html>
+

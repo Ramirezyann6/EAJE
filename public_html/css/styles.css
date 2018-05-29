@@ -129,9 +129,7 @@ p {
 #controles {
     float: right;
 }
-.input-validation {
-	display: inline;
-}
+
 @media screen and (min-width:481px) and (max-width:992px) {
     header { background-image: none; width: auto; margin: 0; height: 160px;}
     nav { margin-top: 0; }
