@@ -34,7 +34,7 @@ and open the template in the editor.
                 <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Enregistrement de la demande</FONT></font> </legend>
                     <p><label><FONT color="white">Numéro SGA : </FONT></label></p>
-                    <p><input type="text" name="i_numSGA" id="i_numSGA" size="35" pattern="[0-9]" /></p>
+                    <p><input type="text" name="i_numSGA" id="i_numSGA" size="35" pattern="[0-9]+$" /></p>
                     <p><label><FONT color="white">Date de saisie de la fiche : </FONT></label>
                     <input type="number" name="num_jour" id="num_jour" min="1" max="31" /><FONT color="white"> / </FONT><input type="number" name="num_mois" id="num_mois" min="1" max="12" /><FONT color="white"> / </FONT><input type="number" name="num_annee" id="num_annee" min="2000" /></p>
                 
@@ -54,7 +54,7 @@ and open the template in the editor.
                     <legend><font size="+3"><FONT color="white">Parent référent</FONT></font></legend>
                    
                    <p><label><FONT color="white">Numéro allocataire CAF : </FONT></label>
-                    <input type="text" name="i_numAlloCAF" id="i_numAlloCAF" size="35" pattern="[0-9]" /></p>
+                    <input type="text" name="i_numAlloCAF" id="i_numAlloCAF" size="35" pattern="[0-9]+$" /></p>
                    
                    <br /><p><label><FONT color="white">Civilité : </FONT></label>
                     <input type="text" name="i_civilite" id="i_civilite" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
@@ -66,8 +66,8 @@ and open the template in the editor.
                     <input type="text" name="i_prenom" id="i_prenom" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
                    
                    <p><label><FONT color="white">En poste/Activité : </FONT></label></p>
-                   <p><input type="radio" name="rd_posteAct" value="oui4" id="rd_oui4" /> <label for="rd_oui4"><FONT color="white">Oui</FONT></label></p>
-                   <p><input type="radio" name="rd_posteAct" value="non4" id="rd_non4" /> <label for="rd_non4"><FONT color="white">Non</FONT></label></p>
+                   <p><input type="radio" name="rd_posteAct" value="oui" id="rd_oui4" /> <label for="rd_oui4"><FONT color="white">Oui</FONT></label></p>
+                   <p><input type="radio" name="rd_posteAct" value="non" id="rd_non4" /> <label for="rd_non4"><FONT color="white">Non</FONT></label></p>
                    
                    
                    <br /><br /><p><label><FONT color="white">Activité professionnelle : </FONT></label></p>
@@ -77,7 +77,7 @@ and open the template in the editor.
                     <input type="text" name="i_lieuActivite" id="i_lieuActivite" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
                    
                    <p><label><FONT color="white">Code postal du lieu d'activité: </FONT></label>
-                    <input type="text" name="i_CP" id="i_CPact" size="35" pattern="[0-9]" /></p><br />
+                    <input type="text" name="i_CP" id="i_CPact" size="35" pattern="[0-9]+$" /></p><br />
                    
                    <p><label><FONT color="white">Bénéficiaire minima social : </FONT></label></p>
                       
@@ -133,13 +133,13 @@ and open the template in the editor.
                     <p><label><FONT color="white">Adresse : </FONT></label>
                     <input type="text" name="i_adresse" id="i_adresse" size="35" pattern="[a-zA-Z\0-9\s\-]+$" /></p>
                      <p><label><FONT color="white">Code postal : </FONT></label>
-                    <input type="text" name="i_CPfamille" id="i_CPfamille" size="35" pattern="([A-Z]+[A-Z]?\-)?[0-9]{1,2} ?[0-9]{3}" /></p>
+                    <input type="text" name="i_CPfamille" id="i_CPfamille" size="35" pattern="([A-Z]+[A-Z]?\-)?[0-9]{1,2} ?[0-9]{3}+$" /></p>
                     <p><label><FONT color="white">Fixe : </FONT></label>
-                    <input type="text" name="i_numTel" id="i_numTel" size="35" pattern="(01|02|03|04|05|06|07|08|09)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}" /></p>
+                    <input type="text" name="i_numTel" id="i_numTel" size="35" pattern="(01|02|03|04|05|06|07|08|09)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}+$" /></p>
                     <p><label><FONT color="white">Portable : </FONT></label>
-                    <input type="text" name="i_numPort" id="i_numPort" size="35" pattern="(01|02|03|04|05|06|07|08|09)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}" /></p>
+                    <input type="text" name="i_numPort" id="i_numPort" size="35" pattern="(01|02|03|04|05|06|07|08|09)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}+$" /></p>
                      <p><label><FONT color="white">Adresse mail : </FONT></label>
-                    <input type="text" name="i_email" id="i_email" size="35" pattern="[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})" /></p>
+                    <input type="text" name="i_email" id="i_email" size="35" pattern="[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})+$" /></p>
                     <p id="controles"><input type="submit" name="sub_validation" value="Validation" /> <input type="reset" name="rst_annuler" value="Annuler" /></p>
                 </fieldset>
             </form>
