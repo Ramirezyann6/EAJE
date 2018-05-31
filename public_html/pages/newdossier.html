@@ -147,29 +147,5 @@ and open the template in the editor.
 
         </section>
         
-                <?php
-        if (isset ($_POST['validation'])){
-            //On récupère les valeurs entrées par l'utilisateur :
-            $pseudo=$_POST['pseudo'];
-            $age=$_POST['age'];
-            $sexe=$_POST['sexe'];
-            //On construit la date d'aujourd'hui
-            //strictement comme sql la construit
-            $today = date("y-m-d");
-            //On se connecte
-            connectMaBase();
- 
-            //On prépare la commande sql d'insertion
-            $sql = 'INSERT INTO Utilisateurs VALUES("","'.$pseudo.'","'.$sexe.'","'.$age.'","'.$today.'")'; 
- 
-            /*on lance la commande (mysql_query) et au cas où, 
-            on rédige un petit message d'erreur si la requête ne passe pas (or die) 
-            (Message qui intègrera les causes d'erreur sql)*/
-            mysql_query ($sql) or die ('Erreur SQL !'.$sql.'<br />'.mysql_error()); 
- 
-            // on ferme la connexion
-            mysql_close();
-        }
-        ?>
     </body>
 

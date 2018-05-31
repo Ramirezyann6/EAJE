@@ -1,0 +1,42 @@
+<html lang="fr-FR">
+    <?php include('../php/commentaire.php');?>
+    <head>
+        <title>Nouveau commentaire</title>
+        <meta charset="utf-8" />
+        <meta name="author" content="Ramirez Yann" />
+        <meta name="description" content="Découvrez le site de gestion des crèches de la ville de Sanary sur Mer" />
+        
+        <link rel="stylesheet" href="../css/styles.css" />
+        <link rel="stylesheet" href="../css/commentaire.css" />
+        
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="../php/newdossierphp.php">Création d'un dossier</a></li>
+                    <li><a href="../php/newenfantphp.php">Ajouter un enfant</a></li>
+                    <li><a href="../php/newcommentairephp.php">Ajouter un commentaire</a></li>
+                    <li><a href="../php/newpriseenchargeenfantphp.php">Prise en charge d'un enfant</a></li>
+                    <li><a href="../pages/listeTemp.html">Consultation de la liste</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="principal">
+                <section id="formulaireEnregistrementCommentaire">
+            <form method="POST" action="../php/commentaire.php">
+                <fieldset id="coordo">
+                    <legend><font size="+3"><FONT color="white">Commentaires</FONT></font> </legend>
+                    <p><label><FONT color="white">Saisir le commentaire :</FONT></label>
+                    <textarea name="area_commentaire" id="area_commentraire" cols="90" rows="4"></textarea></p>
+                    <p><label><FONT color="white">Date du commentaire : </FONT></label>
+                    <input type="number" name="num_jourcom" id="num_jourcom" min="1" max="31" /><FONT color="white"> / </FONT><input type="number" name="num_moiscom" id="num_moiscom" min="1" max="12" /><FONT color="white"> / </FONT><input type="number" name="num_anneecom" id="num_anneecom" min="2000" /></p>
+                    <br /><p><label><FONT color="white">Nom du redacteur :</FONT></label>
+                    <input type="text" name="i_nomRedac" id="i_nomRedac" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
+                    <p id="controles"><input type="submit" name="sub_validationCom" value="Validation" /> <input type="reset" name="rst_annulerComm" value="Annuler" /></p>
+                    
+                </fieldset>
+                </section>
+         </section>
+    </body>
+</html>

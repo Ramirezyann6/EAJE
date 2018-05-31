@@ -20,9 +20,9 @@ and open the template in the editor.
             <nav>
                 <ul>
                     <li><a href="../php/newdossierphp.php">Création d'un dossier</a></li>
-                    <li><a href="../pages/newEnfant.html">Ajouter un enfant</a></li>
-                    <li><a href="../pages/newCommentaire.html">Ajouter un commentaire</a></li>
-                    <li><a href="../pages/priseChargeEnfant.html">Prise en charge d'un enfant</a></li>
+                    <li><a href="../php/newenfantphp.php">Ajouter un enfant</a></li>
+                    <li><a href="../php/newcommentairephp.php">Ajouter un commentaire</a></li>
+                    <li><a href="../php/newpriseenchargeenfantphp.php">Prise en charge d'un enfant</a></li>
                     <li><a href="../pages/listeTemp.html">Consultation de la liste</a></li>
                     
                 </ul>
@@ -104,8 +104,8 @@ and open the template in the editor.
                    
                    <p><label><FONT color="white">En poste/activité : </FONT></label></p>
                    
-                   <p><input type="radio" name="rd_posteAct" value="oui3" id="rd_oui3" /> <label for="rd_oui3"><FONT color="white">Oui</FONT></label></p>
-                   <p><input type="radio" name="rd_posteAct" value="non3" id="rd_non3" /> <label for="rd_non3"><FONT color="white">Non</FONT></label></p>
+                   <p><input type="radio" name="rd_posteAct2" value="oui" id="rd_oui3" /> <label for="rd_oui3"><FONT color="white">Oui</FONT></label></p>
+                   <p><input type="radio" name="rd_posteAct2" value="non" id="rd_non3" /> <label for="rd_non3"><FONT color="white">Non</FONT></label></p>
                    
                    <br /><br /><p><label><FONT color="white">Activité professionnelle : </FONT></label>
                     <input type="text" name="i_actProf2" id="i_actProf2" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
@@ -123,8 +123,8 @@ and open the template in the editor.
                    <label><FONT color="white">Bénéficiaire minima social : </FONT></label>
                    
                            
-                   <p><input type="radio" name="rd_bms" value="oui2" id="rd_oui2" /> <label for="rd_oui2"><FONT color="white">Oui</FONT></label></p>
-                   <p><input type="radio" name="rd_bms" value="non2" id="rd_non2" /> <label for="rd_non2"><FONT color="white">Non</FONT></label></p>
+                   <p><input type="radio" name="rd_bms2" value="oui" id="rd_oui2" /> <label for="rd_oui2"><FONT color="white">Oui</FONT></label></p>
+                   <p><input type="radio" name="rd_bms2" value="non" id="rd_non2" /> <label for="rd_non2"><FONT color="white">Non</FONT></label></p>
                    
                 </fieldset>
                  
@@ -147,28 +147,4 @@ and open the template in the editor.
 
         </section>
         
-                <?php
-                $connexion=filter_input(INPUT_POST, 'sub_validation');
-        if (isset ($connexion)){
-            //On récupère les valeurs entrées par l'utilisateur :
-            $prenom=filter_input(INPUT_POST, 'i_prenom');
-            //On construit la date d'aujourd'hui
-            //strictement comme sql la construit
-            //$today = date("y-m-d");
-            //On se connecte
-            connectMaBase();
- 
-            //On prépare la commande sql d'insertion
-            $sql = 'INSERT INTO parent (PRENOM) VALUES("'.$prenom.'")'; 
- 
-            /*on lance la commande (mysql_query) et au cas où, 
-            on rédige un petit message d'erreur si la requête ne passe pas (or die) 
-            (Message qui intègrera les causes d'erreur sql)*/
-            mysql_query ($sql) or die ('Erreur SQL !'.$sql.'<br />'.mysql_error()); 
- 
-            // on ferme la connexion
-            mysql_close();
-            echo 'insertion good';
-        }
-        ?>
     </body>
