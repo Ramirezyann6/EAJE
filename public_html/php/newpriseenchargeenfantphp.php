@@ -7,6 +7,28 @@
         <meta name="description" content="Découvrez le site de gestion des crèches de la ville de Sanary sur Mer" />
         
         <link rel="stylesheet" href="../css/styles.css" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $(function() {
+                $( "#datepicker6" ).datepicker({
+                altField: "#datepicker",
+                closeText: 'Fermer',
+                prevText: 'Précédent',
+                nextText: 'Suivant',
+                currentText: 'Aujourd\'hui',
+                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+                dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                weekHeader: 'Sem.',
+                dateFormat: 'DD, d MM, yy'
+                    });
+                });
+        </script>
         
     </head>
     <body>
@@ -27,7 +49,7 @@
                 <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Prise en charge de l'enfant</FONT></font> </legend>                    
                     <p><label><FONT color="white">Date de prise en charge de l'enfant : </FONT></label>
-                    <input type="number" name="num_jourPriseChargeEnfant" id="num_jourPriseChargeEnfant" min="1" max="31" /><FONT color="white"> / </FONT><input type="number" name="num_moisPriseChargeEnfant" id="num_moisPriseChargeEnfant" min="1" max="12" /><FONT color="white"> / </FONT><input type="number" name="num_anneePriseChargeEnfant" id="num_anneePriseChargeEnfant" min="2000" /></p>
+                    <input type="text" name="datepicker6" id="datepicker6"></p>
                     <br /><p>
                         <label for="lst_nomCreche"><FONT color="white">Structure retenue : </FONT></label>
                         <select name="lst_nomCreche" id="lst_nomCreche">

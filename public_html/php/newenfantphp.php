@@ -8,7 +8,64 @@
         
         <link rel="stylesheet" href="../css/styles.css" />
         <link rel="stylesheet" href="../css/enfant.css" />
-        
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $(function() {
+                $( "#datepicker3" ).datepicker({
+                altField: "#datepicker",
+                closeText: 'Fermer',
+                prevText: 'Précédent',
+                nextText: 'Suivant',
+                currentText: 'Aujourd\'hui',
+                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+                dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                weekHeader: 'Sem.',
+                dateFormat: 'DD, d MM, yy'
+                    });
+                });
+        </script>
+        <script>
+            $(function() {
+                $( "#datepicker4" ).datepicker({
+                altField: "#datepicker",
+                closeText: 'Fermer',
+                prevText: 'Précédent',
+                nextText: 'Suivant',
+                currentText: 'Aujourd\'hui',
+                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+                dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                weekHeader: 'Sem.',
+                dateFormat: 'DD, d MM, yy'
+                    });
+                });
+        </script>
+        <script>
+            $(function() {
+                $( "#datepicker5" ).datepicker({
+                altField: "#datepicker",
+                closeText: 'Fermer',
+                prevText: 'Précédent',
+                nextText: 'Suivant',
+                currentText: 'Aujourd\'hui',
+                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+                dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                weekHeader: 'Sem.',
+                dateFormat: 'DD, d MM, yy'
+                    });
+                });
+        </script>
     </head>
     <body>
         <header>
@@ -32,13 +89,13 @@
                     <p><label><FONT color="white">Prénom :</FONT></label>
                     <input type="text" name="i_prenomEnfant" id="i_prenomEnfant" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
                     <p><label><FONT color="white">Date de naissance : </FONT></label>
-                    <input type="number" name="num_jourDateNaissEnfant" id="num_jourDateNaissEnfant" min="1" max="31" /><FONT color="white"> / </FONT><input type="number" name="num_moisDateNaissEnfant" id="num_moisDateNaissEnfant" min="1" max="12" /><FONT color="white"> / </FONT><input type="number" name="num_anneeDateNaissEnfant" id="num_anneeDateNaissEnfant" min="2000" /></p>
+                    <input type="text" name="datepicker3" id="datepicker3"></p>
                     <p><label><FONT color="white">Age (mois) :</FONT></label>
                     <input type="number" name="i_ageEnfant" id="i_ageEnfant" size="10" min="0"/></p>
                     <p><label><FONT color="white">Date prévisionnelle: </FONT></label>
-                    <input type="number" name="num_jourDatePrevEnfant" id="num_jourDatePrevEnfant" min="1" max="31" /><FONT color="white"> / </FONT><input type="number" name="num_moisDatePrevEnfant" id="num_moisDatePrevEnfant" min="1" max="12" /><FONT color="white"> / </FONT><input type="number" name="num_anneeDatePrevEnfant" id="num_anneeDatePrevEnfant" min="2000" /></p>
+                    <input type="text" name="datepicker4" id="datepicker4"></p>
                     <p><label><FONT color="white">Date du besoin : </FONT></label>
-                    <input type="number" name="num_jourDateBesoinEnfant" id="num_jourDateBesoinEnfant" min="1" max="31" /><FONT color="white"> / </FONT><input type="number" name="num_moisDateBesoinEnfant" id="num_moisDateBesoinEnfant" min="1" max="12" /><FONT color="white"> / </FONT><input type="number" name="num_anneeDateBesoinEnfant" id="num_anneeDateBesoinEnfant" min="2000" /></p>
+                    <input type="text" name="datepicker5" id="datepicker5"></p>
                     
                     <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Temps d'accueil</FONT></font> </legend>

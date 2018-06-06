@@ -6,14 +6,57 @@ and open the template in the editor.
 -->
 
     <?php include('../php/ccasphp.php');?>
+<html lang="fr-FR">
         <head>
         <title>Création d'un dossier</title>
         <meta charset="utf-8" />
         <meta name="author" content="Ramirez Yann" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Découvrez le site de gestion des crèches de la ville de Sanary sur Mer" />
         <link rel="stylesheet" href="../css/accueil.css" />
         <link rel="stylesheet" href="../css/styles.css" />
         <link rel="stylesheet" href="../css/newDossier.css" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        
+        <script>
+            $(function() {
+                $( "#datepicker1" ).datepicker({
+                altField: "#datepicker",
+                closeText: 'Fermer',
+                prevText: 'Précédent',
+                nextText: 'Suivant',
+                currentText: 'Aujourd\'hui',
+                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+                dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                weekHeader: 'Sem.',
+                dateFormat: 'DD, d MM, yy'
+                    });
+                });
+        </script>
+        <script>
+            $(function() {
+                $( "#datepicker2" ).datepicker({
+                altField: "#datepicker",
+                closeText: 'Fermer',
+                prevText: 'Précédent',
+                nextText: 'Suivant',
+                currentText: 'Aujourd\'hui',
+                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+                dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                weekHeader: 'Sem.',
+                dateFormat: 'DD, d MM, yy'
+                    });
+                });
+        </script>
     </head>
     <body>
         <header>
@@ -36,12 +79,13 @@ and open the template in the editor.
                     <p><label><FONT color="white">Numéro SGA : </FONT></label></p>
                     <p><input type="text" name="i_numSGA" id="i_numSGA" size="35" pattern="[0-9]+$" /></p>
                     <p><label><FONT color="white">Date de saisie de la fiche : </FONT></label>
-                    <input type="number" name="num_jour" id="num_jour" min="1" max="31" /><FONT color="white"> / </FONT><input type="number" name="num_mois" id="num_mois" min="1" max="12" /><FONT color="white"> / </FONT><input type="number" name="num_annee" id="num_annee" min="2000" /></p>
+                    <input type="text" name="datepicker1" id="datepicker1"></p>
                 
                     <fieldset id="coordo2">
                         <legend><FONT color="white">Accusé de réception</FONT></legend>
                     <p><label><FONT color="white"> Date de l'accusé de réception : </FONT></label>
-                        <input type="number" name="num_jourReception" id="num_jourReception" min="1" max="31" /><FONT color="white"> / </FONT><input type="number" name="num_moisReception" id="num_moisReception" min="1" max="12" /><FONT color="white"> / </FONT><input type="number" name="num_anneeReception" id="num_anneeReception" min="2000" /></p>
+                        <input type="text" name="datepicker2" id="datepicker2">
+
                     <br /><p><label><FONT color="white">Type de réponse : </FONT></label>
                       
                        <input type="checkbox" name="chk_mail" id="chk_mail" value="mail"><label for="chk_mail"><FONT color="white">Mail</FONT></label>
