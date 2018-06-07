@@ -8,16 +8,13 @@ try{
 
 $nom3=filter_input(INPUT_POST, 'i_nomEnfant');
 $prenom3=filter_input(INPUT_POST, 'i_prenomEnfant');
-$datenaissj=filter_input(INPUT_POST, 'num_jourDateNaissEnfant');
-$datenaissm=filter_input(INPUT_POST, 'num_moisDateNaissEnfant');
-$datenaissa=filter_input(INPUT_POST, 'num_anneeDateNaissEnfant');
+$datenaiss=filter_input(INPUT_POST, 'datepicker3');
+$datenaiss2=implode('-',array_reverse (explode('/',$datenaiss)));
 $age=filter_input(INPUT_POST, 'i_ageEnfant');
-$dateprevj=filter_input(INPUT_POST, 'num_jourDatePrevEnfant');
-$dateprevm=filter_input(INPUT_POST, 'num_moisDatePrevEnfant');
-$datepreva=filter_input(INPUT_POST, 'num_anneeDatePrevEnfant');
-$datebesoinj=filter_input(INPUT_POST, 'num_jourDateBesoinEnfant');
-$datebesoinm=filter_input(INPUT_POST, 'num_moisDateBesoinEnfant');
-$datebesoina=filter_input(INPUT_POST, 'num_anneeDateBesoinEnfant');
+$dateprev=filter_input(INPUT_POST, 'datepicker4');
+$dateprev2=implode('-',array_reverse (explode('/',$dateprev)));
+$datebesoin=filter_input(INPUT_POST, 'datepicker5');
+$datebesoin2=implode('-',array_reverse (explode('/',$datebesoin)));
 $partiel=filter_input(INPUT_POST, 'partiel');
 $complet=filter_input(INPUT_POST, 'complet');
 $regulier=filter_input(INPUT_POST, 'regulier');
@@ -38,17 +35,13 @@ $modedegarde=filter_input(INPUT_POST, 'rd_modeGarde');
 $structure=filter_input(INPUT_POST, 'lst_nomCreche2');
 $commentairefam=filter_input(INPUT_POST, 'area_commentaireFam');
 
-$req6=$cnx->prepare('INSERT INTO enfant(NOM,PRENOM,DATE_NAISSANCEj,DATE_NAISSANCEm,DATE_NAISSANCEa,AGE, DATE_PREVISIONNELLEj,DATE_PREVISIONNELLEm,DATE_PREVISIONNELLEa) VALUES(:i_nomEnfant,:i_prenomEnfant,:num_jourDateNaissEnfant,:num_moisDateNaissEnfant,:num_anneeDateNaissEnfant, :i_ageEnfant,:num_jourDatePrevEnfant,:num_moisDatePrevEnfant,:num_anneeDatePrevEnfant)');
+$req6=$cnx->prepare('INSERT INTO enfant(NOM,PRENOM,DATE_NAISSANCE,AGE, DATE_PREVISIONNELLE) VALUES(:i_nomEnfant,:i_prenomEnfant,:datepicker3,:i_ageEnfant,:datepicker4)');
 $req6->execute(array(
     'i_nomEnfant'=> $nom3,
     'i_prenomEnfant'=> $prenom3,
-    'num_jourDateNaissEnfant'=> $datenaissj,
-    'num_moisDateNaissEnfant'=>$datenaissm,
-    'num_anneeDateNaissEnfant'=>$datenaissa,
+    'datepicker3'=> $datenaiss2,
     'i_ageEnfant'=>$age,
-    'num_jourDatePrevEnfant'=>$dateprevj,
-    'num_moisDatePrevEnfant'=>$dateprevm,
-    'num_anneeDatePrevEnfant'=>$datepreva
+    'datepicker4'=>$dateprev2
 ));
 echo 'enfant add';
 ?>

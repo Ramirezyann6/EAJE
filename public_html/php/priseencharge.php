@@ -5,16 +5,13 @@ try{
     catch (Exception $e){
         die('Erreur : '.$e->getMessage());
 }        
-$dateprisechargej=filter_input(INPUT_POST, 'num_jourPriseChargeEnfant');
-        $dateprisechargem=filter_input(INPUT_POST, 'num_moisPriseChargeEnfant');
-        $dateprisechargea=filter_input(INPUT_POST, 'num_anneePriseChargeEnfant');
+        $dateprisecharge=filter_input(INPUT_POST, 'datepicker6');
+        $dateprisecharge2=implode('-',array_reverse (explode('/',$dateprisecharge)));
         $choix=filter_input(INPUT_POST, 'lst_nomCreche');
         
-        $req4=$cnx->prepare('INSERT INTO prise_en_charge(DATEPRISECHARGEj,DATEPRISECHARGEm, DATEPRISECHARGEa, STRUCTURE) VALUES (:num_jourPriseChargeEnfant,:num_moisPriseChargeEnfant, :num_anneePriseChargeEnfant, :lst_nomCreche)');
+        $req4=$cnx->prepare('INSERT INTO prise_en_charge(DATE_PRISE_EN_CHARGE, STRUCTURE) VALUES (:datepicker6, :lst_nomCreche)');
         $req4->execute(array(
-            'num_jourPriseChargeEnfant'=>$dateprisechargej,
-            'num_moisPriseChargeEnfant'=>$dateprisechargem,
-            'num_anneePriseChargeEnfant'=>$dateprisechargea,
+            'datepicker6'=>$dateprisecharge2,
             'lst_nomCreche'=>$choix
             ));
             echo '  prise en charge ok';

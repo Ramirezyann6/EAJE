@@ -52,11 +52,10 @@ $req5->execute(array(
         echo 'parent2 ajouter';
         
 $numsga=filter_input(INPUT_POST, 'i_numSGA');
-$datesaisiefichej=filter_input(INPUT_POST, 'num_jour');
-$datesaisiefichem=filter_input(INPUT_POST, 'num_mois');
-$datesaisiefichea=filter_input(INPUT_POST, 'num_annee');
-$dateaccuserecepj=filter_input(INPUT_POST, 'num_jourReception');
-$dateaccuserecepm=filter_input(INPUT_POST, 'num_moisReception');
+$datesaisiefiche=filter_input(INPUT_POST, 'datepicker1');
+$datesaisiefiche2=implode('-',array_reverse (explode('/',$datesaisiefiche)));
+$dateaccuserecep=filter_input(INPUT_POST, 'datepicker2');
+$dateaccuserecep2=implode('-',array_reverse (explode('/',$dateaccuserecep)));
 $dateaccuserecepa=filter_input(INPUT_POST, 'num_anneeReception');
 $typerepmail=filter_input(INPUT_POST, 'chk_mail');
 $typerepcourrier=filter_input(INPUT_POST, 'chk_courrier');
@@ -66,15 +65,11 @@ $fixe=filter_input(INPUT_POST, 'i_numTel');
 $portable=filter_input(INPUT_POST, 'i_numPort');
 $mail=filter_input(INPUT_POST, 'i_email');
 
-$req2=$cnx->prepare('INSERT INTO dossier(NUMSGA, DATESAISIEDOSSIERj, DATESAISIEDOSSIERm, DATESAISIEDOSSIERa, DATEACCUSERECEPj, DATEACCUSERECEPm, DATEACCUSERECEPa, TYPEREPONSEMAIL, TYPEREPONSECOURRIER,ADRESSE,CP,FIXE,PORTABLE,ADRESSEMAIL) VALUES(:i_numSGA,:num_jour,:num_mois, :num_annee, :num_jourReception, :num_moisReception, :num_anneeReception,:chk_mail,:chk_courrier,:i_adresse,:i_CPfamille,:i_numTel,:i_numPort,:i_email)');
+$req2=$cnx->prepare('INSERT INTO dossier(NUMSGA, DATE_SAISIE_DOSSIER, DATE_ACCUSEE_RECEP, TYPEREPONSEMAIL, TYPEREPONSECOURRIER,ADRESSE,CP,FIXE,PORTABLE,ADRESSEMAIL) VALUES(:i_numSGA,:datepicker1, :datepicker2,:chk_mail,:chk_courrier,:i_adresse,:i_CPfamille,:i_numTel,:i_numPort,:i_email)');
 $req2->execute(array(
         'i_numSGA'=>$numsga,
-	'num_jour' => $datesaisiefichej,
-	'num_mois' => $datesaisiefichem,
-        'num_annee' => $datesaisiefichea,
-        'num_jourReception' => $dateaccuserecepj,
-        'num_moisReception'=>$dateaccuserecepm,
-        'num_anneeReception'=>$dateaccuserecepa,
+	'datepicker1' => $datesaisiefiche2,
+        'datepicker2' => $dateaccuserecep2,
         'chk_mail'=>$typerepmail,
         'chk_courrier'=>$typerepcourrier,
         'i_adresse'=>$adresse,

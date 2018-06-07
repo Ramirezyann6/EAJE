@@ -7,16 +7,13 @@ try{
 }
 //a rajouter le nom qui sera l'utilisateur
         $commentaire=filter_input(INPUT_POST, 'area_commentaire');
-        $datecommentairej=filter_input(INPUT_POST, 'num_jourcom');
-        $datecommentairem=filter_input(INPUT_POST, 'num_moiscom');
-        $datecommentairea=filter_input(INPUT_POST, 'num_anneecom');
+        $datecommentaire=filter_input(INPUT_POST, 'datepicker7');
+        $datecommentaire2=implode('-',array_reverse (explode('/',$datecommentaire)));
         
-        $req3=$cnx->prepare('INSERT INTO commentaire(COMMENTAIRE,COMMENTAIREj,COMMENTAIREm,COMMENTAIREa) VALUES (:area_commentaire,:num_jourcom, :num_moiscom, :num_anneecom)');
+        $req3=$cnx->prepare('INSERT INTO commentaire(COMMENTAIRE,DATE_COMMENTAIRE) VALUES (:area_commentaire,:datepicker7)');
         $req3->execute(array(
             'area_commentaire'=>$commentaire,
-            'num_jourcom'=>$datecommentairej,
-            'num_moiscom'=>$datecommentairem,
-            'num_anneecom'=>$datecommentairea
+            'datepicker7'=>$datecommentaire2
             ));
             echo ' commentaire inseré !!!!';
             

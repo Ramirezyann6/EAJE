@@ -26,7 +26,7 @@
                 dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
                 dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
                 weekHeader: 'Sem.',
-                dateFormat: 'DD, d MM, yy'
+                dateFormat: 'dd/mm/yy'
                     });
                 });
         </script>
@@ -44,7 +44,7 @@
                 dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
                 dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
                 weekHeader: 'Sem.',
-                dateFormat: 'DD, d MM, yy'
+                dateFormat: 'dd/mm/yy'
                     });
                 });
         </script>
@@ -62,7 +62,7 @@
                 dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
                 dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
                 weekHeader: 'Sem.',
-                dateFormat: 'DD, d MM, yy'
+                dateFormat: 'dd/mm/yy'
                     });
                 });
         </script>

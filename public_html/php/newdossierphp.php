@@ -35,7 +35,7 @@ and open the template in the editor.
                 dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
                 dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
                 weekHeader: 'Sem.',
-                dateFormat: 'DD, d MM, yy'
+                dateFormat: 'dd/mm/yy'
                     });
                 });
         </script>
@@ -53,7 +53,7 @@ and open the template in the editor.
                 dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
                 dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
                 weekHeader: 'Sem.',
-                dateFormat: 'DD, d MM, yy'
+                dateFormat: 'dd/mm/yy'
                     });
                 });
         </script>
