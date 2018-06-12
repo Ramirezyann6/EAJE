@@ -73,7 +73,7 @@ and open the template in the editor.
         </header>
         <section id="principal">
                 <section id="formulaireEnregistrementDemande">
-            <form method="POST" action="../php/ccasphp.php">
+                    <form method="POST" action="../php/ccasphp.php">
                 <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Enregistrement de la demande</FONT></font> </legend>
                     <p><label><FONT color="white">Numéro SGA : </FONT></label></p>
