@@ -1,4 +1,5 @@
 <?php
+session_start();
 try{
     $cnx = new PDO('mysql:host=127.0.0.1;dbname=ccas', 'root', '');
     }
@@ -25,5 +26,13 @@ $req6->execute(array(
     'i_ageEnfant'=>$age,
     'datepicker4'=>$dateprev2
 ));
+
+$id_nouveau3 = $cnx->lastInsertId();
+$req41 = $cnx->query("SELECT LAST_INSERT_ID()");
+                    $lastIdEnfant = $req41->fetchColumn();
+                    $_SESSION['id_enfant']=$lastIdEnfant;
 echo 'enfant add';
+
+
+header('Location: general.php');
 ?>

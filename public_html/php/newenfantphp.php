@@ -1,5 +1,4 @@
 <html lang="fr-FR">
-    <?php include('../php/enfant.php');?>
     <head>
         <title>Nouvel enfant</title>
         <meta charset="utf-8" />
@@ -96,7 +95,7 @@
                     <input type="text" name="datepicker4" id="datepicker4"></p>
                     <p><label><FONT color="white">Date du besoin : </FONT></label>
                     <input type="text" name="datepicker5" id="datepicker5"></p>
-                    
+                    <p id="controles"><input type="submit" name="sub_validationNewEnfant" value="Validation" /> <input type="reset" name="rst_annulerNewEnfant" value="Annuler" /></p>
 
                     
                     

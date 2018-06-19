@@ -32,8 +32,8 @@ background-image:url(images/test2.jpeg);
 
 #coordo {
     text-align: left;
-    margin-right: 20px;
-    width: 100%;
+    margin-right: 0px;
+    width:90%;
 }
 #coordo2 {
     text-align: left;

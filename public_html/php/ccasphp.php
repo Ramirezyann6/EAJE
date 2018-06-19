@@ -57,8 +57,25 @@ $req5->execute(array(
         ));
         echo 'parent2 ajouter';
         
+$adresse=filter_input(INPUT_POST, 'i_adresse');
+$cp=filter_input(INPUT_POST, 'i_CPfamille');
+$fixe=filter_input(INPUT_POST, 'i_numTel');
+$portable=filter_input(INPUT_POST, 'i_numPort');
+$mail=filter_input(INPUT_POST, 'i_email');
+        
+        $req30=$cnx->prepare('INSERT INTO dossier(NUMSGA, DATE_SAISIE_DOSSIER, DATE_ACCUSEE_RECEP, TYPEREPONSEMAIL, TYPEREPONSECOURRIER,ADRESSE,CP,FIXE,PORTABLE,ADRESSEMAIL) VALUES("","", "","","",:i_adresse,:i_CPfamille,:i_numTel,:i_numPort,:i_email)');
+$req30->execute(array(
+        'i_adresse'=>$adresse,
+        'i_CPfamille'=>$cp,
+        'i_numTel'=>$fixe,
+        'i_numPort'=>$portable,
+        'i_email'=>$mail
+        ));
 
-        
-        
-header('Location: general.php?id_dossier='.$lastId);
+$id_nouveau2 = $cnx->lastInsertId();
+$req40 = $cnx->query("SELECT LAST_INSERT_ID()");
+                    $lastIdDossier = $req40->fetchColumn();
+                    $_SESSION['id_do']=$lastIdDossier;
+        echo ' partie sga ok';
+header('Location: general.php');
 ?>

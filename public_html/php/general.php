@@ -49,6 +49,21 @@
                 </fieldset>
                 <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Enfant</FONT></font> </legend>
+                    <?php     
+                      try{ 
+                            $cnx2 = new PDO('mysql:host=127.0.0.1;dbname=ccas', 'root', '');
+                            }
+                        catch (Exception $e){
+                            die('Erreur : '.$e->getMessage());
+                            }
+                                
+                                    $requette2=$cnx2->query('SELECT NOM,PRENOM FROM enfant WHERE ID_ENFANT='.$_SESSION['id_enfant'].'',PDO::FETCH_ASSOC);
+                    foreach ($requette2 as $row) {
+                        print $row['NOM']. " ";
+                        print $row['PRENOM']."<br>";
+                        }
+                        
+                    ?>
                     <p id="controles"><input name="bouton_terminer" type="button" value="Ajouter un enfant"
                                              onclick="RedirectionJavascriptEnfant()"></p>
                 </fieldset>
