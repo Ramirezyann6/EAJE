@@ -1,13 +1,11 @@
 <html lang="fr-FR">
-    <?php include('../php/demande.php');?>
     <head>
         <title>Demande</title>
         <meta charset="utf-8" />
         <meta name="author" content="Ramirez Yann" />
         <meta name="description" content="Ici, la liste des demandes" />
-        <link rel="stylesheet" href="../css/accueil.css" />
         <link rel="stylesheet" href="../css/styles.css" />
-        <link rel="stylesheet" href="../css/ListeTemp.css" />
+        <link rel="stylesheet" href="../css/newDossier.css" />
     </head>
     <body>
         <header>
@@ -26,7 +24,25 @@
                 <section id="general">
                     <form method="POST" action="../php/demande.php">
                 <fieldset id="coordo">
-                <fieldset id="coordo">
+                     <fieldset id="coordo">
+                    <legend><font size="+3"><FONT color="white">Enregistrement de la demande</FONT></font> </legend>
+                    <p><label><FONT color="white">Numéro SGA : </FONT></label></p>
+                    <p><input type="text" name="i_numSGA" id="i_numSGA" size="35" pattern="[0-9]+$" /></p>
+                    <p><label><FONT color="white">Date de saisie de la fiche : </FONT></label>
+                    <input type="text" name="datepicker1" id="datepicker1"></p>
+                
+                    <fieldset id="coordo2">
+                        <legend><FONT color="white">Accusé de réception</FONT></legend>
+                    <p><label><FONT color="white"> Date de l'accusé de réception : </FONT></label>
+                        <input type="text" name="datepicker2" id="datepicker2">
+
+                    <br /><p><label><FONT color="white">Type de réponse : </FONT></label>
+                      
+                       <input type="checkbox" name="chk_mail" id="chk_mail" value="mail"><label for="chk_mail"><FONT color="white">Mail</FONT></label>
+                       <input type="checkbox" name="chk_courrier" id="chk_courrier" value="courrier"><label for="chk_courrier"><FONT color="white">Courrier</FONT></label>
+                    </p>
+                    </fieldset>
+                </fieldset>
                    
                        <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Temps d'accueil</FONT></font> </legend>
@@ -48,7 +64,6 @@
                     <input type="number" name="horaire_aprem1" id="horaire_aprem1" min="0" max="23" /><FONT color="white"> h </FONT><input type="number" name="horaire_aprem2" id="horaire_aprem2" min="0" max="59" /><FONT color="white"> min </FONT></p>
                     <p><label><FONT color="white">Fin :</FONT></label>
                     <input type="number" name="horaire_aprem3" id="horaire_aprem3" min="0" max="23" /><FONT color="white"> h </FONT><input type="number" name="horaire_aprem4" id="horaire_aprem4" min="0" max="59" /><FONT color="white"> min </FONT></p>
-                    </fieldset>
                     </fieldset>
                     <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Jours</FONT></font> </legend>

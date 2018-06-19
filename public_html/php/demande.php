@@ -5,7 +5,36 @@ try{
     catch (Exception $e){
         die('Erreur : '.$e->getMessage());
 }
+$numsga=filter_input(INPUT_POST, 'i_numSGA');
+$datesaisiefiche=filter_input(INPUT_POST, 'datepicker1');
+$datesaisiefiche2=implode('-',array_reverse (explode('/',$datesaisiefiche)));
+$dateaccuserecep=filter_input(INPUT_POST, 'datepicker2');
+$dateaccuserecep2=implode('-',array_reverse (explode('/',$dateaccuserecep)));
+$dateaccuserecepa=filter_input(INPUT_POST, 'num_anneeReception');
+$typerepmail=filter_input(INPUT_POST, 'chk_mail');
+$typerepcourrier=filter_input(INPUT_POST, 'chk_courrier');
+$adresse=filter_input(INPUT_POST, 'i_adresse');
+$cp=filter_input(INPUT_POST, 'i_CPfamille');
+$fixe=filter_input(INPUT_POST, 'i_numTel');
+$portable=filter_input(INPUT_POST, 'i_numPort');
+$mail=filter_input(INPUT_POST, 'i_email');
 
+$req2=$cnx->prepare('INSERT INTO dossier(NUMSGA, DATE_SAISIE_DOSSIER, DATE_ACCUSEE_RECEP, TYPEREPONSEMAIL, TYPEREPONSECOURRIER,ADRESSE,CP,FIXE,PORTABLE,ADRESSEMAIL) VALUES(:i_numSGA,:datepicker1, :datepicker2,:chk_mail,:chk_courrier,:i_adresse,:i_CPfamille,:i_numTel,:i_numPort,:i_email)');
+$req2->execute(array(
+        'i_numSGA'=>$numsga,
+	'datepicker1' => $datesaisiefiche2,
+        'datepicker2' => $dateaccuserecep2,
+        'chk_mail'=>$typerepmail,
+        'chk_courrier'=>$typerepcourrier,
+        'i_adresse'=>$adresse,
+        'i_CPfamille'=>$cp,
+        'i_numTel'=>$fixe,
+        'i_numPort'=>$portable,
+        'i_email'=>$mail
+        ));
+        echo ' partie sga ok';
+        
+        
 $partiel=filter_input(INPUT_POST, 'partiel');
 $complet=filter_input(INPUT_POST, 'complet');
 $regulier=filter_input(INPUT_POST, 'regulier');

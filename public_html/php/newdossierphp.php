@@ -5,7 +5,6 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
-    <?php include('../php/ccasphp.php');?>
 <html lang="fr-FR">
         <head>
         <title>Création d'un dossier</title>
@@ -74,25 +73,7 @@ and open the template in the editor.
         <section id="principal">
                 <section id="formulaireEnregistrementDemande">
                     <form method="POST" action="../php/ccasphp.php">
-                <fieldset id="coordo">
-                    <legend><font size="+3"><FONT color="white">Enregistrement de la demande</FONT></font> </legend>
-                    <p><label><FONT color="white">Numéro SGA : </FONT></label></p>
-                    <p><input type="text" name="i_numSGA" id="i_numSGA" size="35" pattern="[0-9]+$" /></p>
-                    <p><label><FONT color="white">Date de saisie de la fiche : </FONT></label>
-                    <input type="text" name="datepicker1" id="datepicker1"></p>
-                
-                    <fieldset id="coordo2">
-                        <legend><FONT color="white">Accusé de réception</FONT></legend>
-                    <p><label><FONT color="white"> Date de l'accusé de réception : </FONT></label>
-                        <input type="text" name="datepicker2" id="datepicker2">
-
-                    <br /><p><label><FONT color="white">Type de réponse : </FONT></label>
-                      
-                       <input type="checkbox" name="chk_mail" id="chk_mail" value="mail"><label for="chk_mail"><FONT color="white">Mail</FONT></label>
-                       <input type="checkbox" name="chk_courrier" id="chk_courrier" value="courrier"><label for="chk_courrier"><FONT color="white">Courrier</FONT></label>
-                    </p>
-                    </fieldset>
-                </fieldset>
+               
                 
                 <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Parent référent</FONT></font></legend>

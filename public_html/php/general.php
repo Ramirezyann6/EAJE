@@ -7,6 +7,11 @@
         <link rel="stylesheet" href="../css/accueil.css" />
         <link rel="stylesheet" href="../css/styles.css" />
         <link rel="stylesheet" href="../css/ListeTemp.css" />
+        <script type="text/javascript">
+      function RedirectionJavascriptEnfant(){
+        document.location.href="../php/newenfantphp.php";
+      }
+   </script>
     </head>
     <body>
         <header>
@@ -25,9 +30,27 @@
             <form id="form_contact" name="form_contact" >
                 <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Dossier</FONT></font> </legend>
+                    <div id="afficheElemDossier"></div>
+                        <?php
+                        session_start();
+                        try{ 
+                            $cnx = new PDO('mysql:host=127.0.0.1;dbname=ccas', 'root', '');
+                            }
+                        catch (Exception $e){
+                            die('Erreur : '.$e->getMessage());
+                            }
+                                                
+                                    $requette=$cnx->query('SELECT NOM,PRENOM FROM parent WHERE ID_PARENT='.$_SESSION['id_pa'].'',PDO::FETCH_ASSOC);
+                    foreach ($requette as $row) {
+                        print $row['NOM']. " ";
+                        print $row['PRENOM']."<br>";
+                        }
+                    ?>
                 </fieldset>
                 <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Enfant</FONT></font> </legend>
+                    <p id="controles"><input name="bouton_terminer" type="button" value="Ajouter un enfant"
+                                             onclick="RedirectionJavascriptEnfant()"></p>
                 </fieldset>
                 <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Commentaire</FONT></font> </legend>
