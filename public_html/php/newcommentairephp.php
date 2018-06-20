@@ -1,5 +1,4 @@
 <html lang="fr-FR">
-    <?php include('../php/commentaire.php');?>
     <head>
         <title>Nouveau commentaire</title>
         <meta charset="utf-8" />

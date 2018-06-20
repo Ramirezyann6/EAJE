@@ -72,10 +72,15 @@ $req30->execute(array(
         'i_email'=>$mail
         ));
 
-$id_nouveau2 = $cnx->lastInsertId();
-$req40 = $cnx->query("SELECT LAST_INSERT_ID()");
-                    $lastIdDossier = $req40->fetchColumn();
-                    $_SESSION['id_do']=$lastIdDossier;
+$id_nouveau8 = $cnx->lastInsertId();
+$req100 = $cnx->query("SELECT LAST_INSERT_ID()");
+                    $lastIdDossier = $req100->fetchColumn();
+                    $_SESSION['id_dossier']=$lastIdDossier;
         echo ' partie sga ok';
+        
+ $req88=$cnx->prepare('UPDATE dossier SET FK_ID_PARENT_REF = :id_dossier_parent_ref WHERE ID_DOSSIER=:id_dossier');
+$req88->execute(array(
+    'id_dossier_parent_ref'=>$lastId,
+    'id_dossier' => $lastIdDossier));
 header('Location: general.php');
 ?>

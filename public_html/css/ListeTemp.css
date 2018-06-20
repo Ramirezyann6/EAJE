@@ -26,6 +26,13 @@ p {
     width: 80%;
 }
 
+.macouleur{
+    color : #FFFFFF;
+}
+.bgcolor{
+    background-color : #010101;
+}
+
 label{
     margin-right: 20px;
 	width: 130px;

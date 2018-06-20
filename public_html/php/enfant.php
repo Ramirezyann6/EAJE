@@ -34,5 +34,5 @@ $req41 = $cnx->query("SELECT LAST_INSERT_ID()");
 echo 'enfant add';
 
 
-header('Location: general.php');
+header('Location: general.php?'.$lastIdEnfant);
 ?>

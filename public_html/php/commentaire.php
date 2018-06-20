@@ -1,4 +1,5 @@
 <?php
+session_start();
 try{
     $cnx = new PDO('mysql:host=127.0.0.1;dbname=ccas', 'root', '');
     }
@@ -15,6 +16,10 @@ try{
             'area_commentaire'=>$commentaire,
             'datepicker7'=>$datecommentaire2
             ));
+        $id_nouveau4 = $cnx->lastInsertId();
+$req432 = $cnx->query("SELECT LAST_INSERT_ID()");
+                    $lastIdCommentaire = $req432->fetchColumn();
+                    $_SESSION['id_commentaire']=$lastIdCommentaire;
             echo ' commentaire inseré !!!!';
-            
+            header('Location: general.php?'.$lastIdCommentaire);
 ?>
