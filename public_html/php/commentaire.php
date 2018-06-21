@@ -1,7 +1,7 @@
 <?php
 session_start();
 try{
-    $cnx = new PDO('mysql:host=127.0.0.1;dbname=ccas', 'root', '');
+    $cnx = new PDO('mysql:host=127.0.0.1;dbname=eaje', 'root', '');
     }
     catch (Exception $e){
         die('Erreur : '.$e->getMessage());

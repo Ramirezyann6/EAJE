@@ -1,7 +1,7 @@
 <?php
 session_start();
 try{
-    $cnx = new PDO('mysql:host=127.0.0.1;dbname=ccas', 'root', '');
+    $cnx = new PDO('mysql:host=127.0.0.1;dbname=eaje', 'root', '');
     }
     catch (Exception $e){
         die('Erreur : '.$e->getMessage());
@@ -69,20 +69,18 @@ $req86 = $cnx->query("SELECT LAST_INSERT_ID()");
 
 $structure=filter_input(INPUT_POST, 'lst_nomCreche2');
 
-$req107=$cnx->prepare('INSERT INTO structure (STRUCTURE_NOM) VALUES (:lst_nomCreche2)');
-$req107->execute(array(
-'lst_nomCreche2'=>$structure));
+$req898=$cnx->prepare('UPDATE demande SET FK_STRUCTURE=:structure WHERE ID_DEMANDE=:id_demande');
+$req898->execute(array(
+    'structure'=>$structure,
+    'id_demande'=>$lastIdDemande
+        ));
 
 $id_nouveau568 = $cnx->lastInsertId();
 $req636= $cnx->query("SELECT LAST_INSERT_ID()");
                     $lastIdStructure = $req636->fetchColumn();
                     $_SESSION['id_structure']=$lastIdStructure;
-                    
-$req898=$cnx->prepare('UPDATE demande SET FK_STRUCTURE=:id_structure WHERE ID_DEMANDE=:id_demande');
-$req898->execute(array(
-    'id_structure'=>$_SESSION['id_structure'],
-    'id_demande'=>$_SESSION['id_demande']
-        ));
+
+
 
 
 echo 'Demande confirmé';

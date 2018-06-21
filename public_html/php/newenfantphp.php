@@ -89,8 +89,6 @@
                     <input type="text" name="i_prenomEnfant" id="i_prenomEnfant" size="35" pattern="[a-zA-Z\s\-]+$" /></p>
                     <p><label><FONT color="white">Date de naissance : </FONT></label>
                     <input type="text" name="datepicker3" id="datepicker3"></p>
-                    <p><label><FONT color="white">Age (mois) :</FONT></label>
-                    <input type="number" name="i_ageEnfant" id="i_ageEnfant" size="10" min="0"/></p>
                     <p><label><FONT color="white">Date prévisionnelle: </FONT></label>
                     <input type="text" name="datepicker4" id="datepicker4"></p>
                     <p><label><FONT color="white">Date du besoin : </FONT></label>

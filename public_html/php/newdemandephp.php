@@ -125,14 +125,24 @@
                    <br /><p>
                         <label for="lst_nomCreche2"><FONT color="white">Structure d'accueil : </FONT></label>
                         <select name="lst_nomCreche2" id="lst_nomCreche2">
-                            <option value="Les Bambinoux">Les Bambinoux</option>
-                            <option value="Les Canailloux">Les Canailloux</option>
-                            <option value="Le Petit Prince du Verger">Le Petit Prince du Verger</option>
-                            <option value="Un Petit Coin de Paradis">Un Petit Coin de Paradis</option>
-                            <option value="La Petite Etoile">La Petite Etoile</option>
-                            <option value="Micro-creche privee">Micro-crèche privée</option>
-                            <option value="Babynounous">Babynounous</option>
-                            <option value="Pas de préférence">Pas de préférence</option>
+                            <option value="">Pas de préférence</option>
+                            <?php
+                            try{ 
+                            $cnx700 = new PDO('mysql:host=127.0.0.1;dbname=eaje', 'root', '');
+                            }
+                        catch (Exception $e){
+                            die('Erreur : '.$e->getMessage());
+                            }
+                              
+                            $requette177=$cnx700->query(
+                        'SELECT ID_STRUCTURE, NOM_STRUCTURE FROM STRUCTURE',PDO::FETCH_ASSOC);
+                            
+                           
+                    foreach ($requette177 as $row) {
+                        echo '<option value="'.$row['ID_STRUCTURE'].'">'.$row['NOM_STRUCTURE'].'</option>';
+                        }
+                        
+                    ?>
                         </select>
                     </p>
                    <p><label><FONT color="white">Commentaires de la famille :</FONT></label>

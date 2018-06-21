@@ -46,7 +46,7 @@
                         $span_style = "macouleur";
                         $bgcolor = "bgcolor";
                         try{ 
-                            $cnx = new PDO('mysql:host=127.0.0.1;dbname=ccas', 'root', '');
+                            $cnx = new PDO('mysql:host=127.0.0.1;dbname=eaje', 'root', '');
                             }
                         catch (Exception $e){
                             die('Erreur : '.$e->getMessage());
@@ -80,16 +80,15 @@
                     
                     <?php 
                         try{ 
-                            $cnx4 = new PDO('mysql:host=127.0.0.1;dbname=ccas', 'root', '');
+                            $cnx4 = new PDO('mysql:host=127.0.0.1;dbname=eaje', 'root', '');
                             }
                         catch (Exception $e){
                             die('Erreur : '.$e->getMessage());
                             }
-                    $requette12=$cnx4->query('SELECT NOM_ENFANT,PRENOM_ENFANT,AGE_ENFANT FROM enfant WHERE ID_ENFANT='.$_SESSION['id_enfant'].'',PDO::FETCH_ASSOC);
+                    $requette12=$cnx4->query('SELECT NOM_ENFANT,PRENOM_ENFANT FROM enfant WHERE ID_ENFANT='.$_SESSION['id_enfant'].'',PDO::FETCH_ASSOC);
                     foreach ($requette12 as $row) {
                         print '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['NOM_ENFANT'].'</p></td>' ;" ";
                         print '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['PRENOM_ENFANT'].'</p></td>';"<br>";
-                        print '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['AGE_ENFANT'].'</p></td>';"<br>";
                         }
                         
                     ?>
@@ -104,7 +103,7 @@
                     
                     <?php 
                         try{ 
-                            $cnx100 = new PDO('mysql:host=127.0.0.1;dbname=ccas', 'root', '');
+                            $cnx100 = new PDO('mysql:host=127.0.0.1;dbname=eaje', 'root', '');
                             }
                         catch (Exception $e){
                             die('Erreur : '.$e->getMessage());
@@ -137,7 +136,7 @@
                     <legend><font size="+3"><FONT color="white">Demande de prise en charge de l'enfant</FONT></font> </legend>
                     
                     <?php
-                      echo 'SELECT STRUCTURE_NOM FROM structure WHERE ID_STRUCTURE='.$_SESSION['id_structure'].' AND ID_DEMANDE='.$_SESSION['id_demande'].'<br>';  
+                      
                     ?>
                     
                     <p id="controles"><input name="bouton_terminer" type="button" value="Ajouter une demande"
