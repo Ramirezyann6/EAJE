@@ -17,6 +17,11 @@
         document.location.href="../php/newcommentairephp.php";
       }
    </script>
+   <script type="text/javascript">
+      function RedirectionJavascriptDemande(){
+        document.location.href="../php/newdemandephp.php";
+      }
+   </script>
     </head>
     <body>
         <header>
@@ -49,31 +54,30 @@
                                     echo 'SELECT NOM,PRENOM FROM parent WHERE ID_PARENT='.$_SESSION['id_pa'].' AND ID_DOSSIER='.$_SESSION['id_dossier'].'<br>';            
                     $requette=$cnx->query(
                         'SELECT
-                            p.NOM,p.PRENOM
+                            p.NOM_PARENT,p.PRENOM_PARENT
                         FROM dossier d, parent p
                         WHERE   d.ID_DOSSIER=' . $_SESSION['id_dossier'] . '
                                 AND
-                                p.id_parent = d.fk_id_parent_ref
+                                p.ID_PARENT = d.FK_ID_PARENT_REF
                                 AND
                                 p.ID_PARENT='.$_SESSION['id_pa'],PDO::FETCH_ASSOC);
                     foreach ($requette as $row) {
-                        echo '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['NOM'].'</p></td>'; " ";
-                        echo '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['PRENOM'].'</p></td>';"<br>";
+                        echo '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['NOM_PARENT'].'</p></td>'; " ";
+                        echo '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['PRENOM_PARENT'].'</p></td>';"<br>";
                     }
-                        $requette2=$cnx->query('SELECT ADRESSE,PORTABLE,CP,ADRESSEMAIL FROM dossier WHERE ID_DOSSIER='.$_SESSION['id_dossier'].'',PDO::FETCH_ASSOC);
+                        $requette2=$cnx->query('SELECT ADRESSE_DOSSIER,TEL_PORTABLE_DOSSIER,CP_DOSSIER,ADRESSE_MAIL_DOSSIER FROM dossier WHERE ID_DOSSIER='.$_SESSION['id_dossier'].'',PDO::FETCH_ASSOC);
                     foreach ($requette2 as $row) {
-                        echo '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['ADRESSE'].'</p></td>'; "<br>";
-                        echo '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['PORTABLE'].'</p></td>';"<br>";
-                        echo '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['CP'].'</p></td>';"<br>";
-                        echo '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['ADRESSEMAIL'].'</p></td>';"<br>";
+                        echo '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['ADRESSE_DOSSIER'].'</p></td>'; "<br>";
+                        echo '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['TEL_PORTABLE_DOSSIER'].'</p></td>';"<br>";
+                        echo '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['CP_DOSSIER'].'</p></td>';"<br>";
+                        echo '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['ADRESSE_MAIL_DOSSIER'].'</p></td>';"<br>";
                         }
                     ?>
                 </fieldset>
                 <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Enfant</FONT></font> </legend>
                     
-                    <p id="controles"><input name="bouton_terminer" type="button" value="Ajouter un enfant"
-                                             onclick="RedirectionJavascriptEnfant()"></p>
+                    
                     <?php 
                         try{ 
                             $cnx4 = new PDO('mysql:host=127.0.0.1;dbname=ccas', 'root', '');
@@ -81,38 +85,65 @@
                         catch (Exception $e){
                             die('Erreur : '.$e->getMessage());
                             }
-                    $requette12=$cnx4->query('SELECT NOM,PRENOM,AGE FROM enfant WHERE ID_ENFANT='.$_SESSION['id_enfant'].'',PDO::FETCH_ASSOC);
+                    $requette12=$cnx4->query('SELECT NOM_ENFANT,PRENOM_ENFANT,AGE_ENFANT FROM enfant WHERE ID_ENFANT='.$_SESSION['id_enfant'].'',PDO::FETCH_ASSOC);
                     foreach ($requette12 as $row) {
-                        print '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['NOM'].'</p></td>' ;" ";
-                        print '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['PRENOM'].'</p></td>';"<br>";
-                        print '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['AGE'].'</p></td>';"<br>";
+                        print '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['NOM_ENFANT'].'</p></td>' ;" ";
+                        print '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['PRENOM_ENFANT'].'</p></td>';"<br>";
+                        print '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['AGE_ENFANT'].'</p></td>';"<br>";
                         }
                         
                     ?>
+                    
+                    <p id="controles"><input name="bouton_terminer" type="button" value="Ajouter un enfant"
+                                             onclick="RedirectionJavascriptEnfant()"></p>
+                    
                 </fieldset>
                 <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Commentaire</FONT></font> </legend>
-                    <p id="controles"><input name="bouton_terminer" type="button" value="Ajouter un commentaire"
-                                             onclick="RedirectionJavascriptCommentaire()"></p>
+                   
                     
                     <?php 
                         try{ 
-                            $cnx63 = new PDO('mysql:host=127.0.0.1;dbname=ccas', 'root', '');
+                            $cnx100 = new PDO('mysql:host=127.0.0.1;dbname=ccas', 'root', '');
                             }
                         catch (Exception $e){
                             die('Erreur : '.$e->getMessage());
                             }
-                    $requette72=$cnx63->query('SELECT COMMENTAIRE,DATE_COMMENTAIRE FROM commentaire WHERE ID_COMMENTAIRE='.$_SESSION['id_commentaire'].'AND ID_DOSSIER ='.$_SESSION['id_dossier'],PDO::FETCH_ASSOC);
-                    foreach ($requette72 as $row) {
-                        print '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['COMMENTAIRE'].'</p></td>' ;" ";
-                        print '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['DATE_COMMENTAIRE'].'</p></td>';"<br>";
+                            
+                            echo 'SELECT COMMENTAIRE,DATE_COMMENTAIRE FROM commentaire WHERE ID_COMMENTAIRE='.$_SESSION['id_commentaire'].' AND ID_DOSSIER='.$_SESSION['id_dossier'].'<br>';  
+                            $requette172=$cnx100->query(
+                        'SELECT
+                            c.COMMENTAIRE,c.NOM_REDACTEUR
+                        FROM commentaire c, dossier d
+                        WHERE   
+                                c.ID_COMMENTAIRE='.$_SESSION['id_commentaire'].'
+                                AND
+                                d.ID_DOSSIER = c.FK_DOSSIER 
+                                AND
+                                d.ID_DOSSIER=' . $_SESSION['id_dossier'].'' ,PDO::FETCH_ASSOC);
+                            
+                           
+                    foreach ($requette172 as $row) {
+                        echo '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['COMMENTAIRE'].'</p></td>'; "<br>";
+                        echo '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['NOM_REDACTEUR'].'</p></td>';"<br>";
                         }
                         
                     ?>
-                    
+                     <p id="controles"><input name="bouton_terminer" type="button" value="Ajouter un commentaire"
+                                             onclick="RedirectionJavascriptCommentaire()"></p>
+                     
                 </fieldset>
                 <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Demande de prise en charge de l'enfant</FONT></font> </legend>
+                    
+                    <?php
+                      echo 'SELECT STRUCTURE_NOM FROM structure WHERE ID_STRUCTURE='.$_SESSION['id_structure'].' AND ID_DEMANDE='.$_SESSION['id_demande'].'<br>';  
+                    ?>
+                    
+                    <p id="controles"><input name="bouton_terminer" type="button" value="Ajouter une demande"
+                                             onclick="RedirectionJavascriptDemande()"></p>
+                    
+                    
                 </fieldset>
                 </section>
          </section>

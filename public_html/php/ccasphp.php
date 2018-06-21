@@ -17,7 +17,7 @@ $lieuactivite=filter_input(INPUT_POST, 'i_lieuActivite');
 $cplieuact=filter_input(INPUT_POST, 'i_CP');
 $rsa=filter_input(INPUT_POST, 'rd_bms');
 // On ajoute une entrée dans la table parent
-$req=$cnx->prepare('INSERT INTO parent(NUM_ALLOCATAIRE_CAF, PARENT_REF, CIVILITE, NOM, PRENOM, ENPOSTE, ACTIVITE_PRO, LIEU_ACTIVITE, CP_LIEU_ACTIVITE, RSA) VALUES(:i_numAlloCAF,1,:i_civilite, :i_nom, :i_prenom, :rd_posteAct, :i_actProf,:i_lieuActivite,:i_CP,:rd_bms)');
+$req=$cnx->prepare('INSERT INTO parent(NUM_ALLOCATAIRE_CAF_PARENT, PARENT_REF, CIVILITE_PARENT, NOM_PARENT, PRENOM_PARENT, ENPOSTE_PARENT, ACTIVITE_PRO_PARENT, LIEU_ACTIVITE_PARENT, CP_LIEU_ACTIVITE_PARENT, BENEFICIAIRE_RSA_PARENT) VALUES(:i_numAlloCAF,1,:i_civilite, :i_nom, :i_prenom, :rd_posteAct, :i_actProf,:i_lieuActivite,:i_CP,:rd_bms)');
 $req->execute(array(
         'i_numAlloCAF'=>$num_allocataire_caf,
 	'i_civilite' => $civilite,
@@ -44,7 +44,7 @@ $lieuactivite2=filter_input(INPUT_POST, 'i_lieuActivite2');
 $cplieuact2=filter_input(INPUT_POST, 'i_CP2');
 $rsa2=filter_input(INPUT_POST, 'rd_bms2');
 // On ajoute une entrée dans la table parent
-$req5=$cnx->prepare('INSERT INTO parent(PARENT_REF, CIVILITE, NOM, PRENOM, ENPOSTE, ACTIVITE_PRO, LIEU_ACTIVITE, CP_LIEU_ACTIVITE, RSA) VALUES("",:i_civilite2, :i_nom2, :i_prenom2, :rd_posteAct2, :i_actProf2,:i_lieuActivite2,:i_CP2,:rd_bms2)');
+$req5=$cnx->prepare('INSERT INTO parent(PARENT_REF, CIVILITE_PARENT, NOM_PARENT, PRENOM_PARENT, ENPOSTE_PARENT, ACTIVITE_PRO_PARENT, LIEU_ACTIVITE_PARENT, CP_LIEU_ACTIVITE_PARENT, BENEFICIAIRE_RSA_PARENT) VALUES("",:i_civilite2, :i_nom2, :i_prenom2, :rd_posteAct2, :i_actProf2,:i_lieuActivite2,:i_CP2,:rd_bms2)');
 $req5->execute(array(
 	'i_civilite2' => $civilite2,
 	'i_nom2' => $nom2,
@@ -57,13 +57,20 @@ $req5->execute(array(
         ));
         echo 'parent2 ajouter';
         
+        $id_nouveau18 = $cnx->lastInsertId();
+$req101 = $cnx->query("SELECT LAST_INSERT_ID()");
+                    $lastIdParentSec = $req101->fetchColumn();
+                    $_SESSION['id_parent_sec']=$lastIdParentSec;
+        
+
+        
 $adresse=filter_input(INPUT_POST, 'i_adresse');
 $cp=filter_input(INPUT_POST, 'i_CPfamille');
 $fixe=filter_input(INPUT_POST, 'i_numTel');
 $portable=filter_input(INPUT_POST, 'i_numPort');
 $mail=filter_input(INPUT_POST, 'i_email');
         
-        $req30=$cnx->prepare('INSERT INTO dossier(NUMSGA, DATE_SAISIE_DOSSIER, DATE_ACCUSEE_RECEP, TYPEREPONSEMAIL, TYPEREPONSECOURRIER,ADRESSE,CP,FIXE,PORTABLE,ADRESSEMAIL) VALUES("","", "","","",:i_adresse,:i_CPfamille,:i_numTel,:i_numPort,:i_email)');
+        $req30=$cnx->prepare('INSERT INTO dossier(NUMSGA_DOSSIER, DATE_SAISIE_DOSSIER, DATE_ACCUSEE_RECEP_DOSSIER, TYPE_REPONSE_DOSSIER, ADRESSE_DOSSIER, CP_DOSSIER, TEL_FIXE_DOSSIER,TEL_PORTABLE_DOSSIER,ADRESSE_MAIL_DOSSIER) VALUES("","","","",:i_adresse,:i_CPfamille,:i_numTel,:i_numPort,:i_email)');
 $req30->execute(array(
         'i_adresse'=>$adresse,
         'i_CPfamille'=>$cp,
@@ -78,9 +85,13 @@ $req100 = $cnx->query("SELECT LAST_INSERT_ID()");
                     $_SESSION['id_dossier']=$lastIdDossier;
         echo ' partie sga ok';
         
- $req88=$cnx->prepare('UPDATE dossier SET FK_ID_PARENT_REF = :id_dossier_parent_ref WHERE ID_DOSSIER=:id_dossier');
+ $req88=$cnx->prepare('UPDATE dossier SET FK_ID_PARENT_REF = :id_dossier_parent_ref,FK_ID_PARENT_SEC = :id_parent_sec WHERE ID_DOSSIER=:id_dossier');
 $req88->execute(array(
     'id_dossier_parent_ref'=>$lastId,
+    'id_parent_sec'=>$lastIdParentSec,
     'id_dossier' => $lastIdDossier));
+
+
+
 header('Location: general.php');
 ?>

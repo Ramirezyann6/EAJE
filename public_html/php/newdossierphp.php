@@ -15,47 +15,9 @@ and open the template in the editor.
         <link rel="stylesheet" href="../css/accueil.css" />
         <link rel="stylesheet" href="../css/styles.css" />
         <link rel="stylesheet" href="../css/newDossier.css" />
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="/resources/demos/style.css">
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
         
-        <script>
-            $(function() {
-                $( "#datepicker1" ).datepicker({
-                altField: "#datepicker",
-                closeText: 'Fermer',
-                prevText: 'Précédent',
-                nextText: 'Suivant',
-                currentText: 'Aujourd\'hui',
-                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
-                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
-                dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
-                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
-                weekHeader: 'Sem.',
-                dateFormat: 'dd/mm/yy'
-                    });
-                });
-        </script>
-        <script>
-            $(function() {
-                $( "#datepicker2" ).datepicker({
-                altField: "#datepicker",
-                closeText: 'Fermer',
-                prevText: 'Précédent',
-                nextText: 'Suivant',
-                currentText: 'Aujourd\'hui',
-                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
-                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
-                dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
-                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
-                weekHeader: 'Sem.',
-                dateFormat: 'dd/mm/yy'
-                    });
-                });
-        </script>
+        
     </head>
     <body>
         <header>
@@ -160,9 +122,9 @@ and open the template in the editor.
                      <p><label><FONT color="white">Code postal : </FONT></label>
                     <input type="text" name="i_CPfamille" id="i_CPfamille" size="35" pattern="([A-Z]+[A-Z]?\-)?[0-9]{1,2} ?[0-9]{3}+$" /></p>
                     <p><label><FONT color="white">Fixe : </FONT></label>
-                    <input type="text" name="i_numTel" id="i_numTel" size="35" pattern="(01|02|03|04|05|06|07|08|09)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}+$" /></p>
+                        <input type="tel" name="i_numTel" id="i_numTel" size="35"/></p>
                     <p><label><FONT color="white">Portable : </FONT></label>
-                    <input type="text" name="i_numPort" id="i_numPort" size="35" pattern="(01|02|03|04|05|06|07|08|09)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}+$" /></p>
+                    <input type="tel" name="i_numPort" id="i_numPort" size="35" /></p>
                      <p><label><FONT color="white">Adresse mail : </FONT></label>
                     <input type="text" name="i_email" id="i_email" size="35" pattern="[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})+$" /></p>
                     <p id="controles"><input type="submit" name="sub_validation" value="Validation" /> <input type="reset" name="rst_annuler" value="Annuler" /></p>

@@ -6,6 +6,47 @@
         <meta name="description" content="Ici, la liste des demandes" />
         <link rel="stylesheet" href="../css/styles.css" />
         <link rel="stylesheet" href="../css/newDossier.css" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        
+        <script>
+            $(function() {
+                $( "#datepicker1" ).datepicker({
+                altField: "#datepicker",
+                closeText: 'Fermer',
+                prevText: 'Précédent',
+                nextText: 'Suivant',
+                currentText: 'Aujourd\'hui',
+                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+                dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                weekHeader: 'Sem.',
+                dateFormat: 'dd/mm/yy'
+                    });
+                });
+        </script>
+        <script>
+            $(function() {
+                $( "#datepicker2" ).datepicker({
+                altField: "#datepicker",
+                closeText: 'Fermer',
+                prevText: 'Précédent',
+                nextText: 'Suivant',
+                currentText: 'Aujourd\'hui',
+                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+                dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                weekHeader: 'Sem.',
+                dateFormat: 'dd/mm/yy'
+                    });
+                });
+        </script>
     </head>
     <body>
         <header>
@@ -46,24 +87,27 @@
                    
                        <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Temps d'accueil</FONT></font> </legend>
-                      
-                    <p><input type="checkbox" name="partiel" id="chk_partiel" value="partiel"><label for="chk_partiel"><FONT color="white">Partiel</FONT></label></p>
-                    <p><input type="checkbox" name="complet" id="chk_complet" value="complet"><label for="chk_complet"><FONT color="white">Complet/Occasionnel</FONT></label></p>
-                    <p><input type="checkbox" name="regulier" id="chk_regulier" value="regulier"><label for="chk_regulier"><FONT color="white">Regulier</FONT></label></p>
+                    <p><input type="radio" name="rd_Part_Comp" value="partiel" id="rd_Part_Comp1" /> <label for="rd_Part_Comp"><FONT color="white">Partiel</FONT></label></p>
+                   <p><input type="radio" name="rd_Part_Comp" value="complet" id="rd_Part_Comp2" /> <label for="rd_Part_Comp"><FONT color="white">Complet</FONT></label></p>
+                   </br>
+                   <p><input type="radio" name="rd_Part_Comp2" value="occasionnel" id="rd_Part_Comp3" /> <label for="rd_Part_Comp2"><FONT color="white">Occasionnel</FONT></label></p>
+                   <p><input type="radio" name="rd_Part_Comp2" value="regulier" id="rd_Part_Comp4" /> <label for="rd_Part_Comp2"><FONT color="white">Régulier</FONT></label></p>
+                   
+                   
                        </fieldset>
                     <fieldset id="coordo">
                                         <legend><font size="+3"><FONT color="white">Horaire matin :</FONT></font> </legend>
                     <p><label><FONT color="white">Debut :</FONT></label>
-                    <input type="number" name="horaire_matin1" id="horaire_matin1" min="7" max="18" /><FONT color="white"> h </FONT><input type="number" name="horaire_matin2" id="horaire_matin2" min="0" max="59" /><FONT color="white"> min </FONT></p>
+                    <input type="text" name="horaire_matin1" id="horaire_matin1" min="7" max="18" /></p>
                     <p><label><FONT color="white">Fin :</FONT></label>
-                    <input type="number" name="horaire_matin3" id="horaire_matin3" min="7" max="18" /><FONT color="white"> h </FONT><input type="number" name="horaire_matin4" id="horaire_matin4" min="0" max="59" /><FONT color="white"> min </FONT></p>
+                        <input type="text" name="horaire_matin3" id="horaire_matin3" min="7" max="18" /></p>
                     </fieldset>
                      <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Horaire après-midi :</FONT></font> </legend>
                     <p><label><FONT color="white">Debut :</FONT></label>
-                    <input type="number" name="horaire_aprem1" id="horaire_aprem1" min="0" max="23" /><FONT color="white"> h </FONT><input type="number" name="horaire_aprem2" id="horaire_aprem2" min="0" max="59" /><FONT color="white"> min </FONT></p>
+                    <input type="text" name="horaire_aprem1" id="horaire_aprem1" min="0" max="23" /></p>
                     <p><label><FONT color="white">Fin :</FONT></label>
-                    <input type="number" name="horaire_aprem3" id="horaire_aprem3" min="0" max="23" /><FONT color="white"> h </FONT><input type="number" name="horaire_aprem4" id="horaire_aprem4" min="0" max="59" /><FONT color="white"> min </FONT></p>
+                    <input type="text" name="horaire_aprem3" id="horaire_aprem3" min="0" max="23" /></p>
                     </fieldset>
                     <fieldset id="coordo">
                     <legend><font size="+3"><FONT color="white">Jours</FONT></font> </legend>
@@ -75,20 +119,20 @@
                     <p><input type="checkbox" name="vendredi" id="chk_vendredi" value="vendrdi"><label for="chk_vendrdi"><FONT color="white">Vendredi</FONT></label></p>
                     </fieldset>
                     <p><label><FONT color="white">Mode de garde :</FONT></label></p>
-                   <p><input type="radio" name="rd_modeGarde" value="modeGarde1" id="rd_modeGarde1" /> <label for="rd_modeGarde1"><FONT color="white">Collectif</FONT></label></p>
-                   <p><input type="radio" name="rd_modeGarde" value="modeGarde2" id="rd_modeGarde2" /> <label for="rd_modeGarde2"><FONT color="white">Individuel</FONT></label></p>
+                   <p><input type="radio" name="rd_modeGarde" value="collectif" id="rd_modeGarde1" /> <label for="rd_modeGarde1"><FONT color="white">Collectif</FONT></label></p>
+                   <p><input type="radio" name="rd_modeGarde" value="individuel" id="rd_modeGarde2" /> <label for="rd_modeGarde2"><FONT color="white">Individuel</FONT></label></p>
                    
                    <br /><p>
                         <label for="lst_nomCreche2"><FONT color="white">Structure d'accueil : </FONT></label>
                         <select name="lst_nomCreche2" id="lst_nomCreche2">
-                            <option value="1">Les Bambinoux</option>
-                            <option value="2">Les Canailloux</option>
-                            <option value="3">Le Petit Prince du Verger</option>
-                            <option value="4">Un Petit Coin de Paradis</option>
-                            <option value="5">La Petite Etoile</option>
-                            <option value="6">Micro-crèche privée</option>
-                            <option value="7">Babynounous</option>
-                            <option value="8">Pas de préférence</option>
+                            <option value="Les Bambinoux">Les Bambinoux</option>
+                            <option value="Les Canailloux">Les Canailloux</option>
+                            <option value="Le Petit Prince du Verger">Le Petit Prince du Verger</option>
+                            <option value="Un Petit Coin de Paradis">Un Petit Coin de Paradis</option>
+                            <option value="La Petite Etoile">La Petite Etoile</option>
+                            <option value="Micro-creche privee">Micro-crèche privée</option>
+                            <option value="Babynounous">Babynounous</option>
+                            <option value="Pas de préférence">Pas de préférence</option>
                         </select>
                     </p>
                    <p><label><FONT color="white">Commentaires de la famille :</FONT></label>
