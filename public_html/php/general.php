@@ -28,9 +28,6 @@
             <nav>
                 <ul>
                     <li><a href="../php/newdossierphp.php">Création d'un dossier</a></li>
-                     <li><a href="../pages/newEnfant.html">Ajouter un enfant</a></li>
-                    <li><a href="../pages/newCommentaire.html">Ajouter un commentaire</a></li>
-                    <li><a href="../pages/priseChargeEnfant.html">Prise en charge d'un enfant</a></li>
                     <li><a href="../pages/listeTemp.html">Consultation de la liste</a></li>
                 </ul>
             </nav>
@@ -51,7 +48,7 @@
                         catch (Exception $e){
                             die('Erreur : '.$e->getMessage());
                             }
-                                    echo 'SELECT NOM,PRENOM FROM parent WHERE ID_PARENT='.$_SESSION['id_pa'].' AND ID_DOSSIER='.$_SESSION['id_dossier'].'<br>';            
+                                   
                     $requette=$cnx->query(
                         'SELECT
                             p.NOM_PARENT,p.PRENOM_PARENT
@@ -109,7 +106,7 @@
                             die('Erreur : '.$e->getMessage());
                             }
                             
-                            echo 'SELECT COMMENTAIRE,DATE_COMMENTAIRE FROM commentaire WHERE ID_COMMENTAIRE='.$_SESSION['id_commentaire'].' AND ID_DOSSIER='.$_SESSION['id_dossier'].'<br>';  
+                            
                             $requette172=$cnx100->query(
                         'SELECT
                             c.COMMENTAIRE,c.NOM_REDACTEUR
@@ -136,7 +133,38 @@
                     <legend><font size="+3"><FONT color="white">Demande de prise en charge de l'enfant</FONT></font> </legend>
                     
                     <?php
-                      
+                      try{ 
+                            $cnx106 = new PDO('mysql:host=127.0.0.1;dbname=eaje', 'root', '');
+                            }
+                        catch (Exception $e){
+                            die('Erreur : '.$e->getMessage());
+                            }
+                            
+                              
+                            $requette109=$cnx106->query(
+                        'SELECT
+                            d.NUMSGA_DOSSIER
+                        FROM dossier d
+                        WHERE
+                                d.ID_DOSSIER=' . $_SESSION['id_dossier'].'' ,PDO::FETCH_ASSOC);
+                            
+                           
+                    foreach ($requette109 as $row) {
+                        echo '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['NUMSGA_DOSSIER'].'</p></td>'; "<br>";
+                        }
+                        
+                         
+                        $requette115=$cnx106->query(
+                        'SELECT
+                            d.COMMENTAIRE_FAMILLE
+                        FROM demande d
+                        WHERE
+                                d.ID_DEMANDE=' . $_SESSION['id_demande'].'' ,PDO::FETCH_ASSOC);
+                            
+                           
+                    foreach ($requette115 as $row) {
+                        echo '<td class="'.$bgcolor.'"><p class="'.$span_style.'">'.$row['COMMENTAIRE_FAMILLE'].'</p></td>'; "<br>";
+                        }
                     ?>
                     
                     <p id="controles"><input name="bouton_terminer" type="button" value="Ajouter une demande"
