@@ -53,11 +53,7 @@
             <nav>
                 <ul>
                     <li><a href="../php/newdossierphp.php">Création d'un dossier</a></li>
-                     <li><a href="../pages/newEnfant.html">Ajouter un enfant</a></li>
-                    <li><a href="../pages/newCommentaire.html">Ajouter un commentaire</a></li>
-                    <li><a href="../pages/priseChargeEnfant.html">Prise en charge d'un enfant</a></li>
                     <li><a href="../pages/listeTemp.html">Consultation de la liste</a></li>
-                    <li><a href="../php/newdemandephp.php">demande</a></li>
                 </ul>
             </nav>
         </header>

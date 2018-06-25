@@ -22,6 +22,11 @@
         document.location.href="../php/newdemandephp.php";
       }
    </script>
+      <script type="text/javascript">
+      function RedirectionJavascriptprecc(){
+        document.location.href="../php/newPREC.php";
+      }
+   </script>
     </head>
     <body>
         <header>
@@ -170,6 +175,14 @@
                     <p id="controles"><input name="bouton_terminer" type="button" value="Ajouter une demande"
                                              onclick="RedirectionJavascriptDemande()"></p>
                     
+                    
+                </fieldset>
+                <fieldset id="coordo">
+                    <legend><font size="+3"><FONT color="white">Prise en charge</FONT></font> </legend>
+                    
+                    
+                 <p id="controles"><input name="bouton_terminer" type="button" value="Prise en charge de l'enfant"
+                                             onclick="RedirectionJavascriptprecc()"></p>   
                     
                 </fieldset>
                 </section>

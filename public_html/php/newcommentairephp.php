@@ -36,10 +36,8 @@
             <nav>
                 <ul>
                     <li><a href="../php/newdossierphp.php">Création d'un dossier</a></li>
-                    <li><a href="../php/newenfantphp.php">Ajouter un enfant</a></li>
-                    <li><a href="../php/newcommentairephp.php">Ajouter un commentaire</a></li>
-                    <li><a href="../php/newpriseenchargeenfantphp.php">Prise en charge d'un enfant</a></li>
                     <li><a href="../pages/listeTemp.html">Consultation de la liste</a></li>
+                    <li><a href="../php/newPREC.php">PREC</a></li>
                 </ul>
             </nav>
         </header>

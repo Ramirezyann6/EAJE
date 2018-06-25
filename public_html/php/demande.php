@@ -68,12 +68,8 @@ $req86 = $cnx->query("SELECT LAST_INSERT_ID()");
 
 
 $structure=filter_input(INPUT_POST, 'lst_nomCreche2');
+echo 'structure :' .$structure;
 
-$req898=$cnx->prepare('UPDATE demande SET FK_STRUCTURE=:structure WHERE ID_DEMANDE=:id_demande');
-$req898->execute(array(
-    'structure'=>$structure,
-    'id_demande'=>$lastIdDemande
-        ));
 
 $id_nouveau568 = $cnx->lastInsertId();
 $req636= $cnx->query("SELECT LAST_INSERT_ID()");
@@ -81,7 +77,23 @@ $req636= $cnx->query("SELECT LAST_INSERT_ID()");
                     $_SESSION['id_structure']=$lastIdStructure;
 
 
+$req365=$cnx->prepare('UPDATE demande SET FK_DOSSIER=:id_do WHERE ID_DEMANDE=:id_demande');
+$req365->execute(array(
+    'id_do'=>$_SESSION['id_dossier'],
+    'id_demande'=>$lastIdDemande
+        ));
 
+$req364=$cnx->prepare('UPDATE demande SET FK_ENFANT=:id_enf WHERE ID_DEMANDE=:id_demande');
+$req364->execute(array(
+    'id_enf'=>$_SESSION['id_enfant'],
+    'id_demande'=>$lastIdDemande
+        ));
+
+$req898=$cnx->prepare('UPDATE demande SET FK_STRUCTURE=:structure WHERE ID_DEMANDE=:id_demande');
+$req898->execute(array(
+    'structure'=>$structure,
+    'id_demande'=>$lastIdDemande
+        ));
 
 echo 'Demande confirmé';
 header('Location: general.php');
